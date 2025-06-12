@@ -1,0 +1,34 @@
+{
+  "header": {
+    "title": "Surveillance",
+    "description": "Surveiller les performances du système et gérer les alertes.",
+    "refreshButton": "Actualiser le statut"
+  },
+  "overview": {
+    "systemStatus": {
+      "title": "État du système",
+      "value": "Sain",
+      "description": "Tous les systèmes sont opérationnels"
+    },
+    "activeAlerts": {
+      "title": "Alertes actives",
+      "description": "Nécessite une attention"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "Nouvelles notifications"
+    },
+    "mainContent": {
+      "title": "Aperçu du système",
+      "description": "État actuel du système et métriques de performance"
+    }
+  },
+  "alerts": {
+    "title": "Alertes système",
+    "description": "Afficher et gérer les alertes système"
+  },
+  "metrics": {
+    "title": "Métriques système",
+    "description": "Afficher les métriques de performance du système"
+  }
+}

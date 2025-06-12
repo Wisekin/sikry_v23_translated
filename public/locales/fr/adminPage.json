@@ -1,0 +1,66 @@
+{
+  "header": {
+    "title": "Administration",
+    "subtitle": "Plateforme centrale pour la gestion des paramètres, des utilisateurs et de la sécurité de votre organisation.",
+    "button": "Paramètres globaux"
+  },
+  "tabs": {
+    "overview": "Aperçu",
+    "users": "Utilisateurs",
+    "billing": "Facturation",
+    "security": "Sécurité",
+    "compliance": "Conformité",
+    "monitoring": "Surveillance",
+    "team": "Équipe"
+  },
+  "stats": {
+    "totalUsers": "Utilisateurs totals",
+    "activeSubscriptions": "Abonnements actifs",
+    "securityAlerts": "Alertes de sécurité",
+    "complianceStatus": "État de conformité"
+  },
+  "metrics": {
+    "title": "Métriques de la plateforme",
+    "description": "Indicateurs de performance en temps réel.",
+    "apiLatency": "Latence de l'API",
+    "userGrowth": "Croissance des utilisateurs",
+    "spamRate": "Taux de détection de spam"
+  },
+  "health": {
+    "title": "Santé du système",
+    "description": "État en direct des services principaux."
+  },
+  "actions": {
+    "title": "Actions rapides"
+  },
+  "sections": {
+    "users": {
+      "title": "Gestion des utilisateurs",
+      "placeholder": "Le contenu de la gestion des utilisateurs sera affiché ici."
+    },
+    "billing": {
+      "title": "Facturation et abonnements",
+      "placeholder": "Le contenu de la facturation et des abonnements sera affiché ici."
+    },
+    "security": {
+      "title": "Paramètres de sécurité",
+      "placeholder": "Le contenu des paramètres de sécurité sera affiché ici."
+    },
+    "compliance": {
+      "title": "Conformité",
+      "placeholder": "Le contenu de la conformité sera affiché ici."
+    },
+    "monitoring": {
+      "title": "Surveillance du système",
+      "placeholder": "Le contenu de la surveillance du système sera affiché ici."
+    },
+    "antiSpam": {
+      "title": "Règles anti-spam",
+      "placeholder": "Le contenu des règles anti-spam sera affiché ici."
+    },
+    "team": {
+      "title": "Paramètres de l'équipe",
+      "placeholder": "Le contenu des paramètres de l'équipe sera affiché ici."
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "header": {
+    "title": "Gestion de l'équipe",
+    "description": "Gérez les membres de votre équipe, leurs rôles et leurs autorisations.",
+    "inviteButton": "Inviter un membre"
+  },
+  "overview": {
+    "stats": {
+      "totalMembers": {
+        "title": "Total des membres",
+        "description": "Membres actifs de l'équipe"
+      },
+      "pendingInvites": {
+        "title": "Invitations en attente",
+        "description": "En attente de réponse"
+      },
+      "activeRoles": {
+        "title": "Rôles actifs",
+        "description": "Rôles personnalisés définis"
+      }
+    },
+    "main": {
+      "title": "Aperçu de l'équipe",
+      "description": "Gérez les membres de votre équipe et leurs rôles"
+    }
+  },
+  "members": {
+    "title": "Membres de l'équipe",
+    "description": "Afficher et gérer les membres de l'équipe",
+    "status": {
+      "active": "Actif"
+    }
+  },
+  "roles": {
+    "title": "Rôles de l'équipe",
+    "description": "Gérer les rôles et les responsabilités de l'équipe"
+  },
+  "permissions": {
+    "title": "Autorisations",
+    "description": "Configurer les autorisations d'accès pour les rôles"
+  }
+}

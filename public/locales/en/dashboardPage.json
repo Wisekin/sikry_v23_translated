@@ -1,0 +1,34 @@
+{
+  "title": "Dashboard",
+  "subtitle": "Welcome back! Here's a snapshot of your current status.",
+  "addNewCompany": "Add New Company",
+  "stats": {
+    "totalCompanies": "Total Companies",
+    "companiesTracked": "Companies currently being tracked",
+    "totalCommunications": "Total Communications",
+    "communicationsSent": "Messages sent across all channels",
+    "activeScrapers": "Active Scrapers",
+    "scrapersRunning": "Scrapers currently collecting data"
+  },
+  "quickActions": {
+    "title": "Quick Actions",
+    "description": "Get started with common tasks.",
+    "viewCompanies": "View Companies",
+    "viewCommunications": "View Communications",
+    "manageScrapers": "Manage Scrapers",
+    "viewAnalytics": "View Analytics"
+  },
+  "recentActivity": {
+    "title": "Recent Activity",
+    "description": "A log of recent events in your workspace.",
+    "noActivity": "No recent activity to display."
+  },
+  "cta": {
+    "title": "Explore Market Intelligence",
+    "description": "Gain deeper insights into market trends and competitor strategies.",
+    "button": "Explore Market Intel"
+  },
+  "newScraper": "newScraper",
+  "newCampaign": "newCampaign",
+  "newMessage": "newMessage"
+}

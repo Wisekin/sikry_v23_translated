@@ -1,0 +1,33 @@
+{
+  "title": "Tableau de bord",
+  "subtitle": "Content de vous revoir ! Voici un aperçu de votre statut actuel.",
+  "addNewCompany": "Ajouter une nouvelle entreprise",
+  "stats": {
+    "totalCompanies": "Total des entreprises",
+    "companiesTracked": "Entreprises actuellement suivies",
+    "totalCommunications": "Total des communications",
+    "communicationsSent": "Messages envoyés sur tous les canaux",
+    "activeScrapers": "Scrapers actifs",
+    "scrapersRunning": "Scrapers collectant actuellement des données"
+  },
+  "quickActions": {
+    "title": "Actions rapides",
+    "description": "Commencez avec les tâches courantes.",
+    "viewCompanies": "Voir les entreprises",
+    "viewCommunications": "Voir les communications",
+    "manageScrapers": "Gérer les scrapers",
+    "viewAnalytics": "Voir les analyses"
+  },
+  "recentActivity": {
+    "title": "Activité récente",
+    "description": "Un journal des événements récents dans votre espace de travail.",
+    "noActivity": "Aucune activité récente à afficher."
+  },
+  "cta": {
+    "title": "Explorer l'intelligence de marché",
+    "description": "Obtenez des informations plus approfondies sur les tendances du marché et les stratégies des concurrents.",
+    "button": "Explorer Market Intel"
+  },
+  "newScraper": "newScraper"
+}
+}

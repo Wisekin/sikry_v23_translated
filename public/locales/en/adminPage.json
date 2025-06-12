@@ -1,0 +1,66 @@
+{
+  "header": {
+    "title": "Administration",
+    "subtitle": "Central hub for managing your organization's settings, users, and security.",
+    "button": "Global Settings"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "users": "Users",
+    "billing": "Billing",
+    "security": "Security",
+    "compliance": "Compliance",
+    "monitoring": "Monitoring",
+    "team": "Team"
+  },
+  "stats": {
+    "totalUsers": "Total Users",
+    "activeSubscriptions": "Active Subscriptions",
+    "securityAlerts": "Security Alerts",
+    "complianceStatus": "Compliance Status"
+  },
+  "metrics": {
+    "title": "Platform Metrics",
+    "description": "Real-time performance indicators.",
+    "apiLatency": "API Latency",
+    "userGrowth": "User Growth",
+    "spamRate": "Spam Detection Rate"
+  },
+  "health": {
+    "title": "System Health",
+    "description": "Live status of core services."
+  },
+  "actions": {
+    "title": "Quick Actions"
+  },
+  "sections": {
+    "users": {
+      "title": "User Management",
+      "placeholder": "User management content will be displayed here."
+    },
+    "billing": {
+      "title": "Billing & Subscriptions",
+      "placeholder": "Billing and subscription content will be displayed here."
+    },
+    "security": {
+      "title": "Security Settings",
+      "placeholder": "Security settings content will be displayed here."
+    },
+    "compliance": {
+      "title": "Compliance",
+      "placeholder": "Compliance content will be displayed here."
+    },
+    "monitoring": {
+      "title": "System Monitoring",
+      "placeholder": "System monitoring content will be displayed here."
+    },
+    "antiSpam": {
+      "title": "Anti-Spam Rules",
+      "placeholder": "Anti-spam rules content will be displayed here."
+    },
+    "team": {
+      "title": "Team Settings",
+      "placeholder": "Team settings content will be displayed here."
+    }
+  }
+}

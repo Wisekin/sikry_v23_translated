@@ -1,0 +1,20 @@
+{
+  "header": {
+    "title": "Aperçu des analyses",
+    "subtitle": "Explorez les métriques et informations clés de votre application."
+  },
+  "links": {
+    "performance": {
+      "title": "Analyse des performances",
+      "description": "Plongez dans les métriques de trafic, d'engagement et de comportement des utilisateurs."
+    },
+    "conversion": {
+      "title": "Analyse des conversions",
+      "description": "Suivez les performances de l'entonnoir et identifiez les points de chute."
+    },
+    "revenue": {
+      "title": "Analyse des revenus",
+      "description": "Analysez les tendances des ventes, la LTV et les revenus par source."
+    }
+  }
+}

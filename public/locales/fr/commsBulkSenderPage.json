@@ -1,0 +1,96 @@
+{
+  "tabs": {
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "sms": "SMS"
+  },
+  "email": {
+    "subject": "Sujet",
+    "body": "Corps du message",
+    "subjectPlaceholder": "Entrez le sujet de l'email",
+    "bodyPlaceholder": "Entrez votre message ici...",
+    "personalization": "Personnalisation",
+    "readability": "Lisibilité",
+    "tags": "Tags",
+    "readabilityScore": {
+      "tooShort": "Trop court",
+      "hard": "Difficile",
+      "medium": "Moyen",
+      "easy": "Facile"
+    },
+    "readabilityFeedback": {
+      "startTyping": "Commencez à taper pour voir l'analyse.",
+      "notEnough": "Pas assez de texte pour analyser.",
+      "tooLong": "Les phrases sont trop longues. Viser la concision.",
+      "good": "Bon, mais pourrait être un peu plus simple.",
+      "great": "Excellent ! Votre message est clair et concis."
+    }
+  },
+  "linkedin": {
+    "message": "Message",
+    "messagePlaceholder": "Entrez votre message LinkedIn ici...",
+    "responseRate": "Taux de réponse"
+  },
+  "sms": {
+    "message": "Message",
+    "messagePlaceholder": "Entrez votre message SMS ici...",
+    "characters": "Caractères",
+    "segments": "Segment SMS",
+    "segments_plural": "Segments SMS"
+  },
+  "templates": {
+    "title": "Modèles",
+    "useTemplate": "Utiliser le modèle",
+    "modalTitle": "Choisir un modèle",
+    "categories": {
+      "welcome": "Bienvenue",
+      "promotion": "Promotion",
+      "event": "Événement",
+      "followUp": "Suivi",
+      "networking": "Réseautage",
+      "engagement": "Engagement",
+      "recruitment": "Recrutement",
+      "notification": "Notification"
+    }
+  },
+  "recipients": {
+    "title": "Destinataires",
+    "count": "{{count}} Destinataires",
+    "upload": "Télécharger la liste",
+    "uploadButton": "Télécharger CSV",
+    "uploadModalTitle": "Télécharger les destinataires",
+    "uploadModalDescription": "Téléchargez un fichier CSV contenant votre liste de destinataires."
+  },
+  "delivery": {
+    "title": "Livraison",
+    "options": {
+      "optimal": "Heure optimale",
+      "scheduled": "Planifié",
+      "immediate": "Immédiat"
+    },
+    "schedule": "Planifier",
+    "schedulePlaceholder": "Sélectionnez la date et l'heure"
+  },
+  "theme": {
+    "title": "Thème",
+    "options": {
+      "brand": "Marque",
+      "light": "Clair",
+      "blue": "Bleu",
+      "dark": "Sombre",
+      "purple": "Violet",
+      "green": "Vert",
+      "warm": "Chaud"
+    }
+  },
+  "actions": {
+    "send": "Envoyer",
+    "save": "Enregistrer comme brouillon",
+    "cancel": "Annuler",
+    "close": "Fermer"
+  },
+  "abTesting": {
+    "title": "Test A/B",
+    "description": "Testez différentes versions de votre message pour optimiser les performances"
+  }
+} 

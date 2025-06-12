@@ -1,0 +1,46 @@
+{
+  "header": {
+    "title": "Analyse des conversions",
+    "subtitle": "Comprenez comment les utilisateurs convertissent à travers les entonnoirs clés."
+  },
+  "loading": "Analyse des entonnoirs de conversion...",
+  "error": {
+    "fetch": "Échec de la récupération des données de conversion.",
+    "title": "Impossible de charger les données de conversion",
+    "tryAgain": "Réessayer"
+  },
+  "noData": "Aucune donnée de conversion disponible pour les filtres sélectionnés.",
+  "filters": {
+    "period": "Période :",
+    "last7days": "7 derniers jours",
+    "last30days": "30 derniers jours",
+    "last3months": "3 derniers mois",
+    "funnel": "Entonnoir :",
+    "allFunnels": "Tous les entonnoirs (Global)",
+    "onboardingFunnel": "Entonnoir d'intégration",
+    "salesFunnelQ4": "Entonnoir de vente T4"
+  },
+  "summary": {
+    "overallConversionRate": "Taux de conv. global",
+    "totalConversions": "Conversions totales",
+    "topConvertingFunnel": "Meilleur entonnoir de conv.",
+    "avgCostPerConversion": "Coût moy. / Conversion"
+  },
+  "charts": {
+    "funnel": {
+      "title": "Répartition de l'entonnoir",
+      "description": "Suivez la progression des utilisateurs à chaque étape de l'entonnoir sélectionné.",
+      "visitors": "Visiteurs",
+      "conversion": "Conv. depuis l'étape préc. :",
+      "dropoff": "Abandon :",
+      "entryPoint": "Point d'entrée"
+    },
+    "source": {
+      "title": "Conversions par source",
+      "description": "Identifiez les canaux qui génèrent le plus de conversions.",
+      "source": "Source",
+      "conversions": "Conversions",
+      "rate": "Taux de conversion (%)"
+    }
+  }
+}

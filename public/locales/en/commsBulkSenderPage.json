@@ -1,0 +1,126 @@
+{
+  "tabs": {
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "sms": "SMS"
+  },
+  "email": {
+    "subject": "Subject",
+    "body": "Message Body",
+    "subjectPlaceholder": "Enter email subject",
+    "bodyPlaceholder": "Enter your message here...",
+    "personalization": "Personalization",
+    "readability": "Readability",
+    "tags": "Tags",
+    "readabilityScore": {
+      "tooShort": "Too Short",
+      "hard": "Hard",
+      "medium": "Medium",
+      "easy": "Easy"
+    },
+    "readabilityFeedback": {
+      "startTyping": "Start typing to see analysis.",
+      "notEnough": "Not enough text to analyze.",
+      "tooLong": "Sentences are too long. Aim for brevity.",
+      "good": "Good, but could be slightly simpler.",
+      "great": "Great! Your message is clear and concise."
+    }
+  },
+  "linkedin": {
+    "message": "Message",
+    "messagePlaceholder": "Enter your LinkedIn message here...",
+    "responseRate": "Response Rate"
+  },
+  "sms": {
+    "message": "Message",
+    "messagePlaceholder": "Enter your SMS message here...",
+    "characters": "Characters",
+    "segments": "SMS Segment",
+    "segments_plural": "SMS Segments"
+  },
+  "templates": {
+    "title": "Templates",
+    "useTemplate": "Use Template",
+    "modalTitle": "Choose a Template",
+    "categories": {
+      "welcome": "Welcome",
+      "promotion": "Promotion",
+      "event": "Event",
+      "followUp": "Follow-up",
+      "networking": "Networking",
+      "engagement": "Engagement",
+      "recruitment": "Recruitment",
+      "notification": "Notification"
+    }
+  },
+  "recipients": {
+    "title": "Recipients",
+    "selectRecipients": "Select Recipients",
+    "totalSelected": "{{count}} recipients selected",
+    "noRecipients": "No recipients selected. Please add recipients to send messages.",
+    "addRecipients": "Add Recipients"
+  },
+  "delivery": {
+    "title": "Delivery",
+    "options": {
+      "optimal": "Optimal Time",
+      "scheduled": "Scheduled",
+      "immediate": "Immediate"
+    },
+    "schedule": "Schedule",
+    "schedulePlaceholder": "Select date and time"
+  },
+  "theme": {
+    "title": "Theme",
+    "options": {
+      "brand": "Brand",
+      "light": "Light",
+      "blue": "Blue",
+      "dark": "Dark",
+      "purple": "Purple",
+      "green": "Green",
+      "warm": "Warm"
+    }
+  },
+  "actions": {
+    "send": "Send Messages",
+    "schedule": "Schedule Messages",
+    "cancel": "Cancel",
+    "sending": "Sending...",
+    "scheduled": "Messages Scheduled"
+  },
+  "abTesting": {
+    "title": "A/B Testing",
+    "description": "Test different versions of your message to optimize performance"
+  },
+  "title": "Bulk Sender",
+  "description": "Send communications in bulk to multiple recipients.",
+  "compose": {
+    "title": "Compose Message",
+    "subject": "Subject",
+    "subjectPlaceholder": "Enter message subject",
+    "message": "Message",
+    "messagePlaceholder": "Type your message here...",
+    "attachments": "Attachments",
+    "addAttachment": "Add Attachment"
+  },
+  "schedule": {
+    "title": "Schedule",
+    "sendNow": "Send Now",
+    "scheduleForLater": "Schedule for Later",
+    "dateTime": "Date & Time",
+    "timezone": "Timezone"
+  },
+  "preview": {
+    "title": "Preview",
+    "previewRecipient": "Preview Recipient",
+    "previewMessage": "Preview your message as it will appear to recipients.",
+    "noPreview": "Compose a message to see a preview."
+  },
+  "validation": {
+    "subjectRequired": "Subject is required",
+    "messageRequired": "Message is required",
+    "recipientsRequired": "At least one recipient is required",
+    "scheduleRequired": "Please select a valid date and time for scheduling"
+  }
+}

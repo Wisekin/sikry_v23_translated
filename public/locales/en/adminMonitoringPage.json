@@ -1,0 +1,57 @@
+{
+  "header": {
+    "title": "Monitoring",
+    "description": "Monitor system performance and manage alerts.",
+    "refreshButton": "Refresh Status"
+  },
+  "overview": {
+    "systemStatus": {
+      "title": "System Status",
+      "value": "Healthy",
+      "description": "All systems operational"
+    },
+    "activeAlerts": {
+      "title": "Active Alerts",
+      "description": "Requires attention"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "New notifications"
+    },
+    "mainContent": {
+      "title": "System Overview",
+      "description": "Current system status and performance metrics"
+    }
+  },
+  "alerts": {
+    "title": "Recent Alerts",
+    "noAlerts": "No recent alerts to display.",
+    "type": "Type",
+    "message": "Message",
+    "timestamp": "Timestamp",
+    "severity": "Severity"
+  },
+  "metrics": {
+    "title": "Performance Metrics",
+    "cpuUsage": "CPU Usage",
+    "memoryUsage": "Memory Usage",
+    "diskUsage": "Disk Usage",
+    "networkTraffic": "Network Traffic"
+  },
+  "title": "System Monitoring",
+  "description": "Monitor system health and performance metrics.",
+  "systemStatus": {
+    "title": "System Status",
+    "status": "Status",
+    "uptime": "Uptime",
+    "version": "Version",
+    "lastUpdated": "Last Updated"
+  },
+  "logs": {
+    "title": "System Logs",
+    "noLogs": "No logs to display.",
+    "level": "Level",
+    "message": "Message",
+    "timestamp": "Timestamp"
+  }
+}

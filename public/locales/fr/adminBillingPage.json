@@ -1,0 +1,42 @@
+{
+  "header": {
+    "title": "Facturation",
+    "subtitle": "Gérez vos informations de facturation et votre abonnement."
+  },
+  "buttons": {
+    "updatePaymentMethod": "Mettre à jour le mode de paiement"
+  },
+  "stats": {
+    "currentPlan": {
+      "title": "Plan actuel",
+      "planName": "Pro",
+      "price": "49 $/mois"
+    },
+    "nextInvoice": {
+      "title": "Prochaine facture",
+      "amount": "49,00 $",
+      "due": "Exigible dans 15 jours"
+    },
+    "usage": {
+      "title": "Utilisation",
+      "usage": "75 %",
+      "ofMonthlyQuota": "Du quota mensuel"
+    }
+  },
+  "billingOverview": {
+    "title": "Aperçu de la facturation",
+    "description": "Votre statut de facturation actuel et vos transactions récentes"
+  },
+  "invoices": {
+    "title": "Factures",
+    "description": "Affichez et gérez votre historique de facturation"
+  },
+  "usageAnalytics": {
+    "title": "Analyse de l'utilisation",
+    "description": "Répartition détaillée de votre utilisation des services"
+  },
+  "availablePlans": {
+    "title": "Plans disponibles",
+    "description": "Comparez et basculez entre les différents plans d'abonnement"
+  }
+}

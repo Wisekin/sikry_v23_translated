@@ -1,0 +1,20 @@
+{
+  "header": {
+    "title": "Utilisateurs",
+    "subtitle": "Gérez les membres de votre équipe et leurs rôles.",
+    "button": "Inviter un utilisateur"
+  },
+  "list": {
+    "title": "Tous les utilisateurs",
+    "description": "Affichage de {{count}} utilisateurs.",
+    "searchPlaceholder": "Rechercher par nom ou e-mail..."
+  },
+  "table": {
+    "name": "Nom",
+    "role": "Rôle",
+    "status": "Statut",
+    "lastActive": "Dernière activité",
+    "actions": "Actions",
+    "manage": "Gérer"
+  }
+}

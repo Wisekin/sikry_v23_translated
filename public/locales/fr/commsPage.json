@@ -1,0 +1,105 @@
+{
+  "header": {
+    "title": "Communications",
+    "description": "Gérez vos communications et suivez l'engagement.",
+    "newButton": "Nouvelle communication"
+  },
+  "stats": {
+    "total": "Total",
+    "sent": "Envoyé",
+    "delivered": "Livré",
+    "opened": "Ouvert",
+    "replied": "Répondu"
+  },
+  "tabs": {
+    "inbox": "Boîte de réception",
+    "sent": "Envoyés",
+    "drafts": "Brouillons",
+    "templates": "Modèles",
+    "bulkSender": "Envoi en masse"
+  },
+  "loading": "Chargement des communications...",
+  "title": "Communications",
+  "description": "Gérez vos communications et suivez l'engagement.",
+  "filters": {
+    "all": "Tous",
+    "unread": "Non lu",
+    "starred": "Suivi",
+    "important": "Important",
+    "filter": "Filtrer",
+    "status": "Statut",
+    "channel": "Canal",
+    "company": "Entreprise",
+    "contact": "Contact",
+    "subject": "Sujet",
+    "sentDate": "Date d'envoi",
+    "resetButton": "Réinitialiser les filtres",
+    "datePlaceholder": "Sélectionner des dates"
+  },
+  "search": {
+    "placeholder": "Rechercher des communications...",
+    "subjectPlaceholder": "Rechercher par sujet..."
+  },
+  "composeButton": "Composer",
+  "noMessages": {
+    "title": "Aucun message",
+    "description": "Vous n'avez aucun message dans ce dossier.",
+    "action": "Composer un nouveau message"
+  },
+  "messageList": {
+    "from": "De",
+    "to": "À",
+    "subject": "Sujet",
+    "date": "Date",
+    "status": "Statut",
+    "actions": "Actions"
+  },
+  "status": {
+    "sent": "Envoyé",
+    "delivered": "Livré",
+    "read": "Lu",
+    "failed": "Échec",
+    "draft": "Brouillon"
+  },
+  "actions": {
+    "view": "Voir",
+    "reply": "Répondre",
+    "forward": "Transférer",
+    "delete": "Supprimer",
+    "markAsRead": "Marquer comme lu",
+    "markAsUnread": "Marquer comme non lu",
+    "moveToFolder": "Déplacer vers",
+    "selectAll": "Tout sélectionner",
+    "deselectAll": "Tout désélectionner"
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page",
+    "of": "sur",
+    "itemsPerPage": "éléments par page"
+  },
+  "emptyState": {
+    "title": "Aucune communication pour le moment",
+    "description": "Commencez par composer un nouveau message ou revenez plus tard.",
+    "action": "Composer un message"
+  },
+  "statusOptions": {
+    "pending": "En attente",
+    "sent": "Envoyé",
+    "delivered": "Livré",
+    "opened": "Ouvert",
+    "replied": "Répondu",
+    "failed": "Échoué"
+  },
+  "channelOptions": {
+    "email": "E-mail",
+    "sms": "SMS",
+    "whatsapp": "WhatsApp",
+    "call": "Appel",
+    "linkedin": "LinkedIn",
+    "other": "Autre"
+  },
+  "tabs.all": "tabs.all"
+}nding"
+}

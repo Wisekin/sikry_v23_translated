@@ -1,0 +1,43 @@
+{
+  "header": {
+    "title": "Conformité",
+    "description": "Surveillez et gérez l'état de conformité de votre organisation.",
+    "auditButton": "Lancer l'audit"
+  },
+  "tabs": {
+    "overview": "Aperçu",
+    "logs": "Journaux",
+    "policies": "Politiques",
+    "reports": "Rapports"
+  },
+  "overview": {
+    "gdpr": {
+      "title": "Conformité RGPD",
+      "status": "Entièrement conforme"
+    },
+    "ccpa": {
+      "title": "Conformité CCPA",
+      "status": "Entièrement conforme"
+    },
+    "audit": {
+      "title": "État de l'audit",
+      "status": "Réussi",
+      "lastAudit": "Dernier audit : il y a {{days}} jours"
+    }
+  },
+  "logs": {
+    "title": "Journaux de conformité",
+    "description": "Affichez et gérez les journaux de conformité",
+    "content": "Les entrées du journal de conformité seront affichées ici."
+  },
+  "policies": {
+    "title": "Politiques de conformité",
+    "description": "Affichez et gérez les politiques de conformité",
+    "content": "Les détails de la politique de conformité seront affichés ici."
+  },
+  "reports": {
+    "title": "Rapports de conformité",
+    "description": "Affichez et générez des rapports de conformité",
+    "content": "Les rapports de conformité seront affichés ici."
+  }
+}

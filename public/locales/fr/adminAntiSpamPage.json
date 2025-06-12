@@ -1,0 +1,64 @@
+{
+  "header": {
+    "title": "Paramètres anti-spam",
+    "description": "Configurer la protection anti-spam et les paramètres de conformité"
+  },
+  "status": {
+    "title": "État de la protection anti-spam",
+    "description": "Métriques de détection et de filtrage du spam en temps réel"
+  },
+  "spamMetrics": {
+    "detectionRate": "Taux de détection du spam",
+    "falsePositives": "Faux positifs",
+    "blockedMessages": "Messages bloqués",
+    "quarantined": "En quarantaine"
+  },
+  "filterConfig": {
+    "title": "Configuration du filtre anti-spam",
+    "description": "Ajuster la sensibilité et les règles de détection du spam",
+    "enableSpamDetection": {
+      "label": "Activer la détection du spam",
+      "description": "Détecter et filtrer automatiquement les messages de spam"
+    },
+    "autoQuarantine": {
+      "label": "Mise en quarantaine automatique des messages suspects",
+      "description": "Mettre automatiquement en quarantaine les messages avec des scores de spam élevés"
+    },
+    "senderReputation": {
+      "label": "Vérification de la réputation de l'expéditeur",
+      "description": "Vérifier la réputation de l'expéditeur par rapport aux bases de données de spam connues"
+    },
+    "spamThreshold": {
+      "label": "Seuil de score de spam",
+      "description": "Les messages avec des scores supérieurs à ce seuil seront marqués comme spam (échelle de 1 à 10)"
+    }
+  },
+  "whitelist": {
+    "title": "Liste blanche",
+    "description": "Expéditeurs et domaines de confiance",
+    "placeholder": "Entrez les adresses e-mail ou les domaines (un par ligne)...",
+    "updateButton": "Mettre à jour la liste blanche"
+  },
+  "blacklist": {
+    "title": "Liste noire",
+    "description": "Expéditeurs et domaines bloqués",
+    "placeholder": "Entrez les adresses e-mail ou les domaines à bloquer (un par ligne)...",
+    "updateButton": "Mettre à jour la liste noire"
+  },
+  "compliance": {
+    "title": "Paramètres de conformité",
+    "description": "Configurer les exigences de conformité et réglementaires",
+    "gdpr": {
+      "label": "Mode de conformité RGPD",
+      "description": "Activer des protections de confidentialité supplémentaires pour les destinataires de l'UE"
+    },
+    "canSpam": {
+      "label": "Conformité à la loi CAN-SPAM",
+      "description": "S'assurer que tous les messages sont conformes aux exigences de CAN-SPAM"
+    },
+    "unsubscribe": {
+      "label": "Liens de désabonnement automatiques",
+      "description": "Ajouter automatiquement des liens de désabonnement à tous les e-mails marketing"
+    }
+  }
+}
