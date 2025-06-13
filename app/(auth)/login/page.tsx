@@ -40,7 +40,7 @@ export default function LoginPage() {
       }
     } catch (err) {
       console.error('[Login] Error:', err)
-      setError("Invalid email or password")
+       setError(t('errors.invalidLogin'))
       setLoading(false)
     }
   }

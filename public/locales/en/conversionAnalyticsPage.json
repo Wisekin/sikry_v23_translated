@@ -1,43 +1,50 @@
 {
   "header": {
     "title": "Conversion Analytics",
-    "subtitle": "Understand how users convert through key funnels."
+    "subtitle": "Understand how users convert through key funnels." // Keeping this more specific subtitle
   },
-  "loading": "Analyzing conversion funnels...",
+  "loading": "Loading data...",
   "error": {
-    "fetch": "Failed to fetch conversion data.",
-    "title": "Could not load conversion data",
+    "fetch": "Failed to fetch conversion data.", // Kept existing, task didn't specify to change this one
+    "title": "Error Loading Data",
     "tryAgain": "Try Again"
   },
-  "noData": "No conversion data available for the selected filters.",
+  "noData": "No conversion data available for the selected period.",
   "filters": {
-    "period": "Time Period:",
+    "period": "Period",
     "last7days": "Last 7 Days",
     "last30days": "Last 30 Days",
     "last3months": "Last 3 Months",
-    "funnel": "Funnel:",
-    "allFunnels": "All Funnels (Overall)",
+    "funnel": "Funnel",
+    "allFunnels": "All Funnels",
     "onboardingFunnel": "Onboarding Funnel",
     "salesFunnelQ4": "Sales Funnel Q4"
   },
   "summary": {
-    "overallConversionRate": "Overall Conv. Rate",
+    "overallConversionRate": "Overall Conversion Rate",
     "totalConversions": "Total Conversions",
     "topConvertingFunnel": "Top Converting Funnel",
-    "avgCostPerConversion": "Avg. Cost / Conversion"
+    "avgCostPerConversion": "Avg. Cost Per Conversion"
   },
   "charts": {
     "funnel": {
-      "title": "Funnel Analysis",
-      "subtitle": "Conversion rates by stage"
+      "title": "Funnel Performance",
+      "subtitle": "Conversion rates by stage", // Kept existing subtitle
+      "visitors": "Visitors",
+      "conversion": "Conversion",
+      "entryPoint": "Entry Point",
+      "dropoff": "Drop-off"
     },
-    "trends": {
+    "trends": { // Kept existing section
       "title": "Conversion Trends",
       "subtitle": "Conversion rate over time"
     },
-    "sources": {
-      "title": "Conversion Sources",
-      "subtitle": "Conversions by traffic source"
+    "source": { // Renamed from 'sources'
+      "title": "Conversions by Source",
+      "subtitle": "Conversions by traffic source", // Kept existing subtitle
+      "source": "Source",
+      "conversions": "Conversions",
+      "rate": "Rate"
     },
     "paths": {
       "title": "Conversion Paths",

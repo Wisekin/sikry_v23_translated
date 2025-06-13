@@ -2,8 +2,17 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { AlertTriangle, Lock, ShieldCheck } from "lucide-react"
+import { useTranslation } from 'react-i18next';
 
 export default function SecurityPage() {
+  const { t } = useTranslation('adminSecurityPage');
+
+  // Mock data for values - in a real app, these would come from state or props
+  const activeThreatsCount = 3;
+  const twoFaPercentage = 98;
+  const securityScoreValue = 92;
+  const securityScoreMax = 100;
+
   return (
     <div className="min-h-screen bg-gray-50/50">
       <div className="p-6 space-y-6">
@@ -11,34 +20,34 @@ export default function SecurityPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="bg-white border-none shadow-sm">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Active Threats</CardTitle>
+              <CardTitle className="text-sm font-medium text-gray-500">{t('activeThreats.title')}</CardTitle>
               <AlertTriangle className="w-5 h-5 text-red-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-red-600">3</div>
-              <p className="text-xs text-gray-500">Requires immediate attention</p>
+              <div className="text-2xl font-bold text-red-600">{activeThreatsCount}</div>
+              <p className="text-xs text-gray-500">{t('activeThreats.description')}</p>
             </CardContent>
           </Card>
 
           <Card className="bg-white border-none shadow-sm">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">2FA Status</CardTitle>
+              <CardTitle className="text-sm font-medium text-gray-500">{t('twoFaStatus.title')}</CardTitle>
               <Lock className="w-5 h-5 text-emerald-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-emerald-600">98%</div>
-              <p className="text-xs text-gray-500">Users with 2FA enabled</p>
+              <div className="text-2xl font-bold text-emerald-600">{t('twoFaStatus.valueFormat', { percentage: twoFaPercentage })}</div>
+              <p className="text-xs text-gray-500">{t('twoFaStatus.description')}</p>
             </CardContent>
           </Card>
 
           <Card className="bg-white border-none shadow-sm">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-gray-500">Security Score</CardTitle>
+              <CardTitle className="text-sm font-medium text-gray-500">{t('securityScore.title')}</CardTitle>
               <ShieldCheck className="w-5 h-5 text-blue-500" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-blue-600">92/100</div>
-              <p className="text-xs text-gray-500">Overall security rating</p>
+              <div className="text-2xl font-bold text-blue-600">{t('securityScore.valueFormat', { score: securityScoreValue, maxScore: securityScoreMax })}</div>
+              <p className="text-xs text-gray-500">{t('securityScore.description')}</p>
             </CardContent>
           </Card>
         </div>

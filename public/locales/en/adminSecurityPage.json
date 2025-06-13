@@ -73,5 +73,19 @@
     "disabled": "Disabled",
     "warning": "Warning",
     "error": "Error"
+  },
+  "activeThreats": {
+    "title": "Active Threats",
+    "description": "Requires immediate attention"
+  },
+  "twoFaStatus": {
+    "title": "2FA Status",
+    "description": "Users with 2FA enabled",
+    "valueFormat": "{{percentage}}%"
+  },
+  "securityScore": {
+    "title": "Security Score",
+    "description": "Overall security rating",
+    "valueFormat": "{{score}}/{{maxScore}}"
   }
 }

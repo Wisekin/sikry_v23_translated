@@ -1,45 +1,48 @@
 {
   "header": {
     "title": "Team Management",
-    "description": "Manage your team members, roles, and permissions.",
-    "inviteButton": "Invite Member"
+    "description": "Manage team members, roles, and permissions.",
+    "inviteButton": "Invite Team Member"
   },
   "overview": {
     "stats": {
       "totalMembers": {
         "title": "Total Members",
-        "description": "Active team members"
+        "description": "Currently in the team"
       },
       "pendingInvites": {
         "title": "Pending Invites",
-        "description": "Awaiting response"
+        "description": "Awaiting acceptance"
       },
       "activeRoles": {
         "title": "Active Roles",
-        "description": "Custom roles defined"
+        "description": "Configured roles in the system"
       }
     },
     "main": {
       "title": "Team Overview",
-      "description": "Manage your team members and their roles"
+      "description": "Summary of team structure and activity."
     }
   },
   "members": {
     "title": "Team Members",
-    "description": "View and manage team members",
+    "description": "View and manage all team members.",
     "status": {
-      "active": "Active"
+      "active": "Active",
+      "inactive": "Inactive"
     }
   },
   "roles": {
-    "title": "Team Roles",
+    "title": "Roles & Permissions",
+    "description": "Define and manage user roles and their permissions.",
     "admin": "Administrator",
     "manager": "Manager",
     "member": "Team Member",
     "viewer": "Viewer"
   },
   "permissions": {
-    "title": "Team Permissions",
+    "title": "Global Permissions",
+    "description": "Manage global permission settings for the platform.",
     "view": "View",
     "create": "Create",
     "edit": "Edit",

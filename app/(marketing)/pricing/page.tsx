@@ -3,98 +3,118 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Check, Search, Zap, Crown } from "lucide-react"
 import Link from "next/link"
+import { useTranslation } from 'react-i18next';
 import { Heading } from "@/components/core/typography/Heading"
 import { Text } from "@/components/core/typography/Text"
 
 export default function PricingPage() {
-  const plans = [
-    {
-      name: "Starter",
-      price: "$49",
-      period: "per month",
-      description: "Perfect for small teams getting started with business intelligence",
-      icon: Search,
-      features: [
-        "1,000 company searches per month",
-        "Basic data extraction",
-        "Email outreach (500 emails/month)",
-        "Standard templates",
-        "Basic analytics",
-        "Email support",
-      ],
-      limitations: ["No SMS/WhatsApp", "No AI insights", "No custom scrapers"],
-      cta: "Start Free Trial",
-      popular: false,
-    },
-    {
-      name: "Professional",
-      price: "$149",
-      period: "per month",
-      description: "Advanced features for growing businesses and sales teams",
-      icon: Zap,
-      features: [
-        "10,000 company searches per month",
-        "Advanced data extraction with AI",
-        "Multi-channel outreach (Email, SMS, WhatsApp)",
-        "AI-enhanced templates",
-        "Advanced analytics & reporting",
-        "Lead scoring",
-        "Custom scrapers (5 active)",
-        "Priority support",
-      ],
-      limitations: ["Limited market intelligence", "Basic competitor analysis"],
-      cta: "Start Free Trial",
-      popular: true,
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "contact us",
-      description: "Full-featured solution for large organizations",
-      icon: Crown,
-      features: [
-        "Unlimited company searches",
-        "Full AI-powered data extraction",
-        "Unlimited multi-channel outreach",
-        "Custom AI templates",
-        "Advanced market intelligence",
-        "Comprehensive competitor analysis",
-        "Unlimited custom scrapers",
-        "Relationship mapping",
-        "White-label options",
-        "Dedicated account manager",
-        "24/7 phone support",
-        "Custom integrations",
-        "SSO & advanced security",
-      ],
-      limitations: [],
-      cta: "Contact Sales",
-      popular: false,
-    },
-  ]
+  const { t } = useTranslation('pricingPage');
 
-  const faqs = [
+  const planDefinitions = [
     {
-      question: "What's included in the free trial?",
-      answer: "All plans include a 14-day free trial with full access to features. No credit card required.",
+      id: "starter",
+      icon: Search,
+      popular: false,
+      nameKey: "plans.starter.name",
+      priceKey: "plans.starter.price",
+      periodKey: "plans.starter.period",
+      descriptionKey: "plans.starter.description",
+      featuresKeys: [
+        "plans.starter.features.0",
+        "plans.starter.features.1",
+        "plans.starter.features.2",
+        "plans.starter.features.3",
+        "plans.starter.features.4",
+        "plans.starter.features.5"
+      ],
+      limitationsKeys: [
+        "plans.starter.limitations.0",
+        "plans.starter.limitations.1",
+        "plans.starter.limitations.2"
+      ],
+      ctaKey: "plans.starter.ctaButton"
     },
     {
-      question: "Can I change plans anytime?",
-      answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the next billing cycle.",
+      id: "professional",
+      icon: Zap,
+      popular: true,
+      nameKey: "plans.professional.name",
+      priceKey: "plans.professional.price",
+      periodKey: "plans.professional.period",
+      descriptionKey: "plans.professional.description",
+      featuresKeys: [
+        "plans.professional.features.0",
+        "plans.professional.features.1",
+        "plans.professional.features.2",
+        "plans.professional.features.3",
+        "plans.professional.features.4",
+        "plans.professional.features.5",
+        "plans.professional.features.6",
+        "plans.professional.features.7"
+      ],
+      limitationsKeys: [
+        "plans.professional.limitations.0",
+        "plans.professional.limitations.1"
+      ],
+      ctaKey: "plans.professional.ctaButton",
+      popularBadgeKey: "plans.professional.popularBadge"
     },
     {
-      question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards, PayPal, and bank transfers for Enterprise plans.",
+      id: "enterprise",
+      icon: Crown,
+      popular: false,
+      nameKey: "plans.enterprise.name",
+      priceKey: "plans.enterprise.price", // This will be "Custom"
+      periodKey: "plans.enterprise.period",
+      descriptionKey: "plans.enterprise.description",
+      featuresKeys: [
+        "plans.enterprise.features.0",
+        "plans.enterprise.features.1",
+        "plans.enterprise.features.2",
+        "plans.enterprise.features.3",
+        "plans.enterprise.features.4",
+        "plans.enterprise.features.5",
+        "plans.enterprise.features.6",
+        "plans.enterprise.features.7",
+        "plans.enterprise.features.8",
+        "plans.enterprise.features.9",
+        "plans.enterprise.features.10",
+        "plans.enterprise.features.11",
+        "plans.enterprise.features.12"
+      ],
+      limitationsKeys: [],
+      ctaKey: "plans.enterprise.ctaButton"
     },
-    {
-      question: "Is there a setup fee?",
-      answer: "No setup fees for Starter and Professional plans. Enterprise plans may include implementation services.",
-    },
-    {
-      question: "Do you offer discounts for annual billing?",
-      answer: "Yes, save 20% when you pay annually. Contact us for custom Enterprise pricing.",
-    },
-  ]
+  ];
+
+  const plans = planDefinitions.map(p => ({
+    id: p.id,
+    icon: p.icon,
+    popular: p.popular,
+    name: t(p.nameKey),
+    // Handle "Custom" price which is not a key, otherwise translate
+    price: p.priceKey === "plans.enterprise.price" ? t(p.priceKey) : p.priceKey.includes('$') ? p.priceKey : t(p.priceKey), // Logic to check if priceKey is a key or direct value
+    period: p.periodKey ? t(p.periodKey) : "", // Translate period only if key exists
+    description: t(p.descriptionKey),
+    features: p.featuresKeys.map(fk => t(fk)),
+    limitations: p.limitationsKeys.map(lk => t(lk)),
+    cta: t(p.ctaKey),
+    popularBadge: p.popularBadgeKey ? t(p.popularBadgeKey) : undefined
+  }));
+
+  const faqDefinitions = [
+    { questionKey: "faq.questions.0.question", answerKey: "faq.questions.0.answer" },
+    { questionKey: "faq.questions.1.question", answerKey: "faq.questions.1.answer" },
+    { questionKey: "faq.questions.2.question", answerKey: "faq.questions.2.answer" },
+    { questionKey: "faq.questions.3.question", answerKey: "faq.questions.3.answer" },
+    { questionKey: "faq.questions.4.question", answerKey: "faq.questions.4.answer" },
+    { questionKey: "faq.questions.5.question", answerKey: "faq.questions.5.answer" },
+  ];
+
+  const faqs = faqDefinitions.map(f => ({
+    question: t(f.questionKey),
+    answer: t(f.answerKey)
+  }));
 
   return (
     <div className="min-h-screen bg-background">
@@ -105,18 +125,18 @@ export default function PricingPage() {
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
               <Search className="w-4 h-4 text-white" />
             </div>
-            <span className="text-xl font-semibold text-primary">S-I-K-R-Y</span>
+            <span className="text-xl font-semibold text-primary">SIKRY</span> {/* Brand name, likely not translated */}
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-sm font-medium text-secondary hover:text-primary transition-colors">
-              Home
+              {t('nav.home')}
             </Link>
             <Link href="/features" className="text-sm font-medium text-secondary hover:text-primary transition-colors">
-              Features
+              {t('nav.features')}
             </Link>
-            <span className="text-sm font-medium text-primary">Pricing</span>
+            <span className="text-sm font-medium text-primary">{t('nav.pricing')}</span>
             <Button size="sm" className="bg-accent hover:bg-accent/90">
-              Get Started
+              {t('nav.getStartedButton')}
             </Button>
           </nav>
         </div>
@@ -126,29 +146,29 @@ export default function PricingPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Heading level={1} className="mb-6">
-            Simple, Transparent <span className="text-accent">Pricing</span>
+            {t('hero.title.main')}<span className="text-accent">{t('hero.title.highlight')}</span>
           </Heading>
           <Text size="lg" className="text-secondary mb-8">
-            Choose the perfect plan for your business intelligence needs. All plans include a 14-day free trial.
+            {t('hero.description')}
           </Text>
           <Badge variant="secondary" className="bg-emerald-50 text-emerald-700 border-emerald-200">
             <Check className="w-3 h-3 mr-1" />
-            No setup fees • Cancel anytime • 14-day free trial
+            {t('hero.badgeText')}
           </Badge>
         </div>
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {plans.map((plan, index) => (
+          {plans.map((plan) => ( // removed index, using plan.id
             <Card
-              key={index}
+              key={plan.id} // Use plan.id for key
               className={`shadow-card hover:shadow-floating transition-all relative ${
                 plan.popular ? "ring-2 ring-accent scale-105" : ""
               }`}
             >
-              {plan.popular && (
+              {plan.popular && plan.popularBadge && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-accent text-white">Most Popular</Badge>
+                  <Badge className="bg-accent text-white">{plan.popularBadge}</Badge>
                 </div>
               )}
 
@@ -159,7 +179,7 @@ export default function PricingPage() {
                 <CardTitle className="text-2xl">{plan.name}</CardTitle>
                 <div className="mt-4">
                   <span className="text-4xl font-bold text-primary">{plan.price}</span>
-                  <span className="text-secondary ml-2">{plan.period}</span>
+                  {plan.period && <span className="text-secondary ml-2">{plan.period}</span>}
                 </div>
                 <CardDescription className="mt-2">{plan.description}</CardDescription>
               </CardHeader>
@@ -174,7 +194,7 @@ export default function PricingPage() {
                   ))}
                   {plan.limitations.map((limitation, limitIndex) => (
                     <div key={limitIndex} className="flex items-center gap-2 opacity-60">
-                      <div className="w-4 h-4 flex-shrink-0" />
+                      <div className="w-4 h-4 flex-shrink-0" /> {/* Empty div for spacing like original */}
                       <Text size="sm" className="line-through">
                         {limitation}
                       </Text>
@@ -196,7 +216,7 @@ export default function PricingPage() {
         {/* FAQ Section */}
         <div className="max-w-3xl mx-auto">
           <Heading level={2} className="text-center mb-8">
-            Frequently Asked Questions
+            {t('faq.title')}
           </Heading>
           <div className="space-y-6">
             {faqs.map((faq, index) => (
@@ -217,17 +237,17 @@ export default function PricingPage() {
       <section className="bg-gradient-to-r from-primary to-accent text-white">
         <div className="container mx-auto px-4 py-16 text-center">
           <Heading level={2} className="text-white mb-4">
-            Ready to Get Started?
+            {t('cta.title')}
           </Heading>
           <Text size="lg" className="opacity-90 mb-8 max-w-2xl mx-auto">
-            Join thousands of companies already using S-I-K-R-Y to transform their business intelligence.
+            {t('cta.description')}
           </Text>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
-              Start Free Trial
+            <Button size="lg" variant="secondary" asChild>
+              <Link href="/search">{t('cta.trialButton')}</Link>
             </Button>
             <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-              Schedule Demo
+              {t('cta.demoButton')}
             </Button>
           </div>
         </div>

@@ -1,10 +1,12 @@
 {
   "header": {
-    "title": "Anti-Spam Settings",
-    "description": "Configure spam protection and compliance settings"
+    "title": "Anti-Spam Configuration",
+    "description": "Manage anti-spam settings, rules, and filters."
   },
   "status": {
-    "enabled": "Enabled",
+    "title": "Current Spam Status",
+    "description": "Overview of spam detection metrics.",
+    "enabled": "Enabled", // Keeping existing status values
     "disabled": "Disabled",
     "warning": "Warning",
     "error": "Error"
@@ -16,56 +18,62 @@
     "quarantined": "Quarantined"
   },
   "filterConfig": {
-    "title": "Spam Filter Configuration",
-    "description": "Adjust spam detection sensitivity and rules",
+    "title": "Filter Configuration",
+    "description": "Adjust settings for spam detection and filtering.",
     "enableSpamDetection": {
       "label": "Enable Spam Detection",
-      "description": "Automatically detect and filter spam messages"
+      "description": "Master switch for all spam filtering."
     },
     "autoQuarantine": {
-      "label": "Auto-Quarantine Suspicious Messages",
-      "description": "Automatically quarantine messages with high spam scores"
+      "label": "Auto-Quarantine",
+      "description": "Automatically move detected spam to quarantine."
     },
     "senderReputation": {
-      "label": "Sender Reputation Checking",
-      "description": "Check sender reputation against known spam databases"
+      "label": "Sender Reputation Analysis",
+      "description": "Use sender scores to identify potential spam."
     },
     "spamThreshold": {
-      "label": "Spam Score Threshold",
-      "description": "Messages with scores above this threshold will be marked as spam (1-10 scale)"
+      "label": "Spam Threshold Score",
+      "description": "Messages scoring above this are considered spam (1-10)."
     }
   },
   "whitelist": {
-    "title": "Whitelist",
-    "add": "Add to Whitelist",
+    "title": "Whitelist Management",
+    "description": "Emails and domains on this list will bypass spam filters.",
+    "placeholder": "Enter emails or domains, one per line...",
+    "updateButton": "Update Whitelist",
+    "add": "Add to Whitelist", // Keep existing sub-actions if they are used elsewhere
     "remove": "Remove from Whitelist",
     "import": "Import Whitelist",
     "export": "Export Whitelist"
   },
   "blacklist": {
-    "title": "Blacklist",
-    "add": "Add to Blacklist",
+    "title": "Blacklist Management",
+    "description": "Emails and domains on this list will always be marked as spam.",
+    "placeholder": "Enter emails or domains, one per line...",
+    "updateButton": "Update Blacklist",
+    "add": "Add to Blacklist", // Keep existing sub-actions
     "remove": "Remove from Blacklist",
     "import": "Import Blacklist",
     "export": "Export Blacklist"
   },
   "compliance": {
     "title": "Compliance Settings",
-    "description": "Configure compliance and regulatory requirements",
+    "description": "Ensure adherence to anti-spam regulations.",
     "gdpr": {
       "label": "GDPR Compliance Mode",
-      "description": "Enable additional privacy protections for EU recipients"
+      "description": "Enable stricter rules for GDPR adherence."
     },
     "canSpam": {
       "label": "CAN-SPAM Act Compliance",
-      "description": "Ensure all messages comply with CAN-SPAM requirements"
+      "description": "Ensure emails meet CAN-SPAM requirements."
     },
     "unsubscribe": {
-      "label": "Automatic Unsubscribe Links",
-      "description": "Automatically add unsubscribe links to all marketing emails"
+      "label": "Mandatory Unsubscribe Links",
+      "description": "Automatically add unsubscribe links to all outgoing emails."
     }
   },
-  "title": "Anti-Spam Settings",
+  "legacyPageTitle": "Anti-Spam Settings", // was "title"
   "subtitle": "Manage spam protection and filtering rules",
   "sections": {
     "filters": "Spam Filters",

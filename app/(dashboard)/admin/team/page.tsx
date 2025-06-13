@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next"; // This will be updated by the change below
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, UserPlus, Shield, Pencil, Trash2 } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
 export default function TeamManagementPage() {
-  const { t } = useTranslation('adminTeamPage');
+  const { t } = useTranslation(['adminTeamPage', 'common']);
   const searchParams = useSearchParams();
   const activeTab = searchParams.get('tab') || 'overview';
   const viewMode = searchParams.get('view') || 'grid';
@@ -131,18 +131,20 @@ export default function TeamManagementPage() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="text-gray-500 hover:text-[#2A3050]"
+                        className="text-gray-500 hover:text-[#2A3050] gap-2" // Added gap for spacing
                         onClick={() => handleEdit(member.id)}
                       >
                         <Pencil className="w-4 h-4" />
+                        {t('edit', { ns: 'common' })}
                       </Button>
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="text-gray-500 hover:text-red-600"
+                        className="text-gray-500 hover:text-red-600 gap-2" // Added gap for spacing
                         onClick={() => handleDelete(member.id)}
                       >
                         <Trash2 className="w-4 h-4" />
+                        {t('delete', { ns: 'common' })}
                       </Button>
                     </div>
                   </div>
