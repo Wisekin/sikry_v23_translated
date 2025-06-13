@@ -1,7 +1,7 @@
 {
   "header": {
-    "title": "Billing",
-    "subtitle": "Manage your billing information and subscription."
+    "title": "Billing Management",
+    "subtitle": "View and manage your subscription, invoices, and usage."
   },
   "buttons": {
     "updatePaymentMethod": "Update Payment Method"
@@ -9,38 +9,38 @@
   "stats": {
     "currentPlan": {
       "title": "Current Plan",
-      "planName": "Pro",
-      "price": "$49/month"
+      "planName": "Professional",
+      "priceFormat": "{{amount}}/month"
     },
     "nextInvoice": {
       "title": "Next Invoice",
-      "amount": "$49.00",
-      "due": "Due in 15 days"
+      "amount": "$99.00", // Example value, actual value is dynamic
+      "dueOnFormat": "Due on {{date}}"
     },
     "usage": {
-      "title": "Usage",
-      "usage": "75%",
-      "ofMonthlyQuota": "Of monthly quota"
+      "title": "Current Usage",
+      "usageFormat": "{{currentUsage}}/{{quota}}", // For "7500/10000"
+      "ofMonthlyQuota": "of monthly quota"
     }
   },
   "billingOverview": {
     "title": "Billing Overview",
-    "description": "Your current billing status and recent transactions"
+    "description": "Summary of your current billing status and history."
   },
   "invoices": {
     "title": "Invoices",
-    "description": "View and manage your billing history"
+    "description": "View and download your past invoices."
   },
   "usageAnalytics": {
     "title": "Usage Analytics",
-    "description": "Detailed breakdown of your service usage"
+    "description": "Detailed breakdown of your platform usage."
   },
   "availablePlans": {
     "title": "Available Plans",
-    "description": "Compare and switch between different subscription plans"
+    "description": "Explore and manage your subscription plans."
   },
-  "title": "Billing Management",
-  "subtitle": "Manage billing and subscription settings",
+  "title": "Billing Management", // This seems to be a legacy page title, header.title is more specific
+  "subtitle": "Manage billing and subscription settings", // Legacy page subtitle
   "actions": {
     "addPlan": "Add Plan",
     "editPlan": "Edit Plan",

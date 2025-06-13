@@ -1,34 +1,34 @@
 {
   "header": {
-    "title": "Surveillance",
-    "description": "Surveiller les performances du système et gérer les alertes.",
-    "refreshButton": "Actualiser le statut"
+    "title": "Surveillance du Système",
+    "description": "Surveillez la santé du système, les alertes et les métriques de performance.",
+    "refreshButton": "Actualiser les Données"
   },
   "overview": {
     "systemStatus": {
-      "title": "État du système",
-      "value": "Sain",
-      "description": "Tous les systèmes sont opérationnels"
+      "title": "État du Système",
+      "value": "Opérationnel",
+      "description": "Tous les systèmes sont normaux"
     },
     "activeAlerts": {
-      "title": "Alertes actives",
-      "description": "Nécessite une attention"
+      "title": "Alertes Actives",
+      "description": "Problèmes critiques nécessitant une attention"
     },
     "notifications": {
-      "title": "Notifications",
-      "description": "Nouvelles notifications"
+      "title": "Notifications Récentes",
+      "description": "Événements et mises à jour du système"
     },
     "mainContent": {
-      "title": "Aperçu du système",
-      "description": "État actuel du système et métriques de performance"
+      "title": "Aperçu de la Surveillance",
+      "description": "Tableau de bord de l'état actuel du système et des métriques clés."
     }
   },
   "alerts": {
-    "title": "Alertes système",
-    "description": "Afficher et gérer les alertes système"
+    "title": "Journal des Alertes",
+    "description": "Visualisez et gérez les alertes système."
   },
   "metrics": {
-    "title": "Métriques système",
-    "description": "Afficher les métriques de performance du système"
+    "title": "Métriques de Performance",
+    "description": "Indicateurs de performance détaillés du système."
   }
 }

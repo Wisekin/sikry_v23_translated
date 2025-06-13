@@ -1,30 +1,31 @@
 {
   "header": {
-    "title": "Monitoring",
-    "description": "Monitor system performance and manage alerts.",
-    "refreshButton": "Refresh Status"
+    "title": "System Monitoring",
+    "description": "Monitor system health, alerts, and performance metrics.",
+    "refreshButton": "Refresh Data"
   },
   "overview": {
     "systemStatus": {
       "title": "System Status",
-      "value": "Healthy",
-      "description": "All systems operational"
+      "value": "Operational",
+      "description": "All systems normal"
     },
     "activeAlerts": {
       "title": "Active Alerts",
-      "description": "Requires attention"
+      "description": "Critical issues needing attention"
     },
     "notifications": {
-      "title": "Notifications",
-      "description": "New notifications"
+      "title": "Recent Notifications",
+      "description": "System events and updates"
     },
     "mainContent": {
-      "title": "System Overview",
-      "description": "Current system status and performance metrics"
+      "title": "Monitoring Overview",
+      "description": "Dashboard for current system status and key metrics."
     }
   },
   "alerts": {
-    "title": "Recent Alerts",
+    "title": "Alerts Log",
+    "description": "View and manage system alerts.",
     "noAlerts": "No recent alerts to display.",
     "type": "Type",
     "message": "Message",
@@ -33,14 +34,15 @@
   },
   "metrics": {
     "title": "Performance Metrics",
+    "description": "Detailed system performance indicators.",
     "cpuUsage": "CPU Usage",
     "memoryUsage": "Memory Usage",
     "diskUsage": "Disk Usage",
     "networkTraffic": "Network Traffic"
   },
-  "title": "System Monitoring",
-  "description": "Monitor system health and performance metrics.",
-  "systemStatus": {
+  "legacyPageTitle": "System Monitoring", // Was "title"
+  "legacyPageDescription": "Monitor system health and performance metrics.", // Was "description"
+  "legacySystemStatus": { // Was "systemStatus"
     "title": "System Status",
     "status": "Status",
     "uptime": "Uptime",

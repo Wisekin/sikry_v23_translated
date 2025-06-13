@@ -28,11 +28,12 @@ import {
 import { useTranslation } from "react-i18next"
 
 // --- Helper component for chart tooltips
-const CustomTooltip = ({ active, payload, label }: any) => {
+const CustomTooltip = ({ active, payload, label, t }: any) => { // Added t as prop
   if (active && payload && payload.length) {
+    const unit = payload[0].dataKey === 'ms' ? t('customTooltip.msUnit') : (payload[0].dataKey === 'rate' ? t('customTooltip.percentageUnit') : '');
     return (
       <div className="p-2 bg-gray-700 text-white rounded-md shadow-lg text-xs">
-        <p className="font-bold">{`${payload[0].value}${payload[0].dataKey === 'ms' ? 'ms' : (payload[0].dataKey === 'rate' ? '%' : '')}`}</p>
+        <p className="font-bold">{`${payload[0].value}${unit}`}</p>
       </div>
     );
   }
@@ -81,29 +82,29 @@ export default function AdminPage() {
   const recentActivities = [
     {
       user: "Sarah Johnson",
-      action: "updated permissions for 'Mark Wilson'.",
-      time: "10m ago",
+      action: t('recentActivity.actions.updatedPermissions', { user: 'Mark Wilson' }),
+      time: "10m ago", // Time kept as mock data
       icon: UserGroupIcon,
     },
     {
-      user: "System",
-      action: "completed its daily security scan.",
+      user: "System", // User kept as mock data
+      action: t('recentActivity.actions.completedScan'),
       time: "1h ago",
       icon: ShieldCheckIcon,
     },
     {
       user: "Mark Wilson",
-      action: "updated the company billing address.",
+      action: t('recentActivity.actions.updatedBilling'),
       time: "3h ago",
       icon: CreditCardIcon,
     },
     {
       user: "System",
-      action: "detected a high-risk login attempt.",
+      action: t('recentActivity.actions.detectedRisk'),
       time: "Yesterday",
       icon: BellAlertIcon,
     },
-  ]
+  ];
 
   const systemMetricsData = {
     api: {
@@ -195,20 +196,20 @@ export default function AdminPage() {
                     </TabsList>
                     <TabsContent value="users">
                       <div className="p-6 bg-gray-50 rounded-lg">
-                        <h3 className="text-lg font-semibold">{t('tabs.users.content.title')}</h3>
-                        <p className="text-gray-600">{t('tabs.users.content.description')}</p>
+                        <h3 className="text-lg font-semibold">{t('tabs.users_content.title')}</h3>
+                        <p className="text-gray-600">{t('tabs.users_content.description')}</p>
                       </div>
                     </TabsContent>
                     <TabsContent value="security">
                       <div className="p-6 bg-gray-50 rounded-lg">
-                        <h3 className="text-lg font-semibold">{t('tabs.security.content.title')}</h3>
-                        <p className="text-gray-600">{t('tabs.security.content.description')}</p>
+                        <h3 className="text-lg font-semibold">{t('tabs.security_content.title')}</h3>
+                        <p className="text-gray-600">{t('tabs.security_content.description')}</p>
                       </div>
                     </TabsContent>
                     <TabsContent value="billing">
                       <div className="p-6 bg-gray-50 rounded-lg">
-                        <h3 className="text-lg font-semibold">{t('tabs.billing.content.title')}</h3>
-                        <p className="text-gray-600">{t('tabs.billing.content.description')}</p>
+                        <h3 className="text-lg font-semibold">{t('tabs.billing_content.title')}</h3>
+                        <p className="text-gray-600">{t('tabs.billing_content.description')}</p>
                       </div>
                     </TabsContent>
                   </Tabs>
@@ -344,7 +345,7 @@ export default function AdminPage() {
               <div className="h-20 w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart data={metric.data} margin={{ top: 5, right: 0, left: 0, bottom: 5 }}>
-                    <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(100,100,100,0.3)', strokeWidth: 1, strokeDasharray: '3 3' }} />
+                    <Tooltip content={<CustomTooltip t={t} />} cursor={{ stroke: 'rgba(100,100,100,0.3)', strokeWidth: 1, strokeDasharray: '3 3' }} />
                     <defs>
                         <linearGradient id={`color-${key}`} x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor={metric.color} stopOpacity={0.4}/>
