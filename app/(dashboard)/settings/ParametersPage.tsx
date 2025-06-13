@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
 import { Label } from "@/components/ui/label"
@@ -11,6 +12,7 @@ import { Text } from "@/components/core/typography/Text"
 import { Save } from "lucide-react"
 
 export function ParametersPage() {
+  const { t } = useTranslation(['settingsPage', 'common']);
   const [settings, setSettings] = useState({
     dataRetention: "30",
     autoRefresh: true,
@@ -30,54 +32,54 @@ export function ParametersPage() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle>General Settings</CardTitle>
-          <CardDescription>Configure general platform behavior and preferences</CardDescription>
+          <CardTitle>{t('parametersPage.general.title', { ns: 'settingsPage' })}</CardTitle>
+          <CardDescription>{t('parametersPage.general.description', { ns: 'settingsPage' })}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <Label htmlFor="defaultView">Default View</Label>
+              <Label htmlFor="defaultView">{t('parametersPage.general.defaultView.label', { ns: 'settingsPage' })}</Label>
               <Select value={settings.defaultView} onValueChange={(value) => handleChange("defaultView", value)}>
                 <SelectTrigger id="defaultView">
-                  <SelectValue placeholder="Select default view" />
+                  <SelectValue placeholder={t('parametersPage.general.defaultView.placeholder', { ns: 'settingsPage' })} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="list">List View</SelectItem>
-                  <SelectItem value="grid">Grid View</SelectItem>
-                  <SelectItem value="map">Map View</SelectItem>
+                  <SelectItem value="list">{t('parametersPage.general.defaultView.options.list', { ns: 'settingsPage' })}</SelectItem>
+                  <SelectItem value="grid">{t('parametersPage.general.defaultView.options.grid', { ns: 'settingsPage' })}</SelectItem>
+                  <SelectItem value="map">{t('parametersPage.general.defaultView.options.map', { ns: 'settingsPage' })}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="language">Language</Label>
+              <Label htmlFor="language">{t('parametersPage.general.language.label', { ns: 'settingsPage' })}</Label>
               <Select value={settings.language} onValueChange={(value) => handleChange("language", value)}>
                 <SelectTrigger id="language">
-                  <SelectValue placeholder="Select language" />
+                  <SelectValue placeholder={t('parametersPage.general.language.placeholder', { ns: 'settingsPage' })} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="en">English</SelectItem>
-                  <SelectItem value="fr">Français</SelectItem>
+                  <SelectItem value="en">{t('parametersPage.general.language.options.en', { ns: 'settingsPage' })}</SelectItem>
+                  <SelectItem value="fr">{t('parametersPage.general.language.options.fr', { ns: 'settingsPage' })}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="exportFormat">Export Format</Label>
+              <Label htmlFor="exportFormat">{t('parametersPage.general.exportFormat.label', { ns: 'settingsPage' })}</Label>
               <Select value={settings.exportFormat} onValueChange={(value) => handleChange("exportFormat", value)}>
                 <SelectTrigger id="exportFormat">
-                  <SelectValue placeholder="Select export format" />
+                  <SelectValue placeholder={t('parametersPage.general.exportFormat.placeholder', { ns: 'settingsPage' })} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="csv">CSV</SelectItem>
-                  <SelectItem value="xlsx">Excel (XLSX)</SelectItem>
-                  <SelectItem value="json">JSON</SelectItem>
+                  <SelectItem value="csv">{t('parametersPage.general.exportFormat.options.csv', { ns: 'settingsPage' })}</SelectItem>
+                  <SelectItem value="xlsx">{t('parametersPage.general.exportFormat.options.xlsx', { ns: 'settingsPage' })}</SelectItem>
+                  <SelectItem value="json">{t('parametersPage.general.exportFormat.options.json', { ns: 'settingsPage' })}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="dataRetention">Data Retention (days)</Label>
+              <Label htmlFor="dataRetention">{t('parametersPage.general.dataRetention.label', { ns: 'settingsPage' })}</Label>
               <Input
                 id="dataRetention"
                 type="number"
@@ -89,9 +91,9 @@ export function ParametersPage() {
 
           <div className="flex items-center justify-between">
             <div>
-              <Label htmlFor="autoRefresh">Auto-refresh Data</Label>
+              <Label htmlFor="autoRefresh">{t('parametersPage.general.autoRefresh.label', { ns: 'settingsPage' })}</Label>
               <Text size="sm" className="text-secondary">
-                Automatically refresh data every 5 minutes
+                {t('parametersPage.general.autoRefresh.description', { ns: 'settingsPage' })}
               </Text>
             </div>
             <Switch
@@ -103,9 +105,9 @@ export function ParametersPage() {
 
           <div className="flex items-center justify-between">
             <div>
-              <Label htmlFor="enableNotifications">Enable Notifications</Label>
+              <Label htmlFor="enableNotifications">{t('parametersPage.general.enableNotifications.label', { ns: 'settingsPage' })}</Label>
               <Text size="sm" className="text-secondary">
-                Receive notifications for important events
+                {t('parametersPage.general.enableNotifications.description', { ns: 'settingsPage' })}
               </Text>
             </div>
             <Switch
@@ -117,9 +119,9 @@ export function ParametersPage() {
 
           <div className="flex items-center justify-between">
             <div>
-              <Label htmlFor="darkMode">Dark Mode</Label>
+              <Label htmlFor="darkMode">{t('parametersPage.general.darkMode.label', { ns: 'settingsPage' })}</Label>
               <Text size="sm" className="text-secondary">
-                Use dark theme for the interface
+                {t('parametersPage.general.darkMode.description', { ns: 'settingsPage' })}
               </Text>
             </div>
             <Switch
@@ -133,12 +135,12 @@ export function ParametersPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>API Settings</CardTitle>
-          <CardDescription>Configure API usage and limits</CardDescription>
+          <CardTitle>{t('parametersPage.api.title', { ns: 'settingsPage' })}</CardTitle>
+          <CardDescription>{t('parametersPage.api.description', { ns: 'settingsPage' })}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="apiLimit">API Request Limit (per day)</Label>
+            <Label htmlFor="apiLimit">{t('parametersPage.api.requestLimit.label', { ns: 'settingsPage' })}</Label>
             <Input
               id="apiLimit"
               type="number"
@@ -152,7 +154,7 @@ export function ParametersPage() {
       <div className="flex justify-end">
         <Button>
           <Save className="w-4 h-4 mr-2" />
-          Save Settings
+          {t('parametersPage.buttons.save', { ns: 'settingsPage' })}
         </Button>
       </div>
     </div>

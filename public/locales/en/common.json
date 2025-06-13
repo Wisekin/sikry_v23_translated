@@ -95,7 +95,19 @@
   "search.filters.marketing": "search.filters.marketing",
   "search.filters.label": "search.filters.label",
   "nav.admin.users": "nav.admin.users",
-  "loading": "loading",
-  "nav.secondary.addCompany": "nav.secondary.addCompany"
-}mpanies"
+  "loading": "Loading...",
+  "nav.secondary.addCompany": "nav.secondary.addCompany",
+  "actions": "Actions",
+  "viewDetails": "View Details",
+  "notAvailable": "N/A",
+  "status": {
+    "pending": "Pending",
+    "verified": "Verified",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "connected": "Connected",
+    "notConnected": "Not connected"
+  },
+  "percentageFormat": "{{value}}%",
+  "copy": "Copy"
 }

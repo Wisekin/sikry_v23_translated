@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import Link from "next/link"
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -14,27 +15,29 @@ export const metadata = {
 }
 
 export default function CampaignsPage() {
+  const { t } = useTranslation('commsPage');
+
   return (
     <div className="container mx-auto py-6 space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Campaigns</h1>
-          <p className="text-muted-foreground">Manage your communication campaigns and track their performance.</p>
+          <h1 className="text-3xl font-bold tracking-tight">{t('campaignsList.header.title')}</h1>
+          <p className="text-muted-foreground">{t('campaignsList.header.description')}</p>
         </div>
         <Button asChild>
           <Link href={ROUTES.CAMPAIGNS + "/new"}>
             <PlusCircle className="mr-2 h-4 w-4" />
-            New Campaign
+            {t('campaignsList.header.newButton')}
           </Link>
         </Button>
       </div>
 
       <Tabs defaultValue="active" className="w-full">
         <TabsList>
-          <TabsTrigger value="active">Active</TabsTrigger>
-          <TabsTrigger value="draft">Draft</TabsTrigger>
-          <TabsTrigger value="completed">Completed</TabsTrigger>
-          <TabsTrigger value="all">All Campaigns</TabsTrigger>
+          <TabsTrigger value="active">{t('campaignsList.tabs.active')}</TabsTrigger>
+          <TabsTrigger value="draft">{t('campaignsList.tabs.draft')}</TabsTrigger>
+          <TabsTrigger value="completed">{t('campaignsList.tabs.completed')}</TabsTrigger>
+          <TabsTrigger value="all">{t('campaignsList.tabs.all')}</TabsTrigger>
         </TabsList>
         <TabsContent value="active" className="space-y-4">
           <Suspense fallback={<PageLoader />}>

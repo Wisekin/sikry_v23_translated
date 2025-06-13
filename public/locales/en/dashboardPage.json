@@ -1,18 +1,26 @@
 {
   "title": "Dashboard",
-  "subtitle": "Welcome back! Here's a snapshot of your current status.",
-  "addNewCompany": "Add New Company",
+  "subtitle": "Welcome back! Here's an overview of your activities.",
+  "header": {
+    "addNewCompanyButton": "Add New Company"
+  },
   "stats": {
     "totalCompanies": "Total Companies",
-    "companiesTracked": "Companies currently being tracked",
+    "companiesTracked": "Number of companies being tracked.",
     "totalCommunications": "Total Communications",
-    "communicationsSent": "Messages sent across all channels",
+    "communicationsSent": "Number of communications sent.",
     "activeScrapers": "Active Scrapers",
-    "scrapersRunning": "Scrapers currently collecting data"
+    "scrapersRunning": "Number of scrapers currently running."
   },
   "quickActions": {
     "title": "Quick Actions",
-    "description": "Get started with common tasks.",
+    "description": "Perform common tasks quickly.",
+    "buttons": {
+        "addNewCompany": "Add New Company",
+        "newMessage": "New Message",
+        "newScraper": "New Scraper",
+        "newCampaign": "New Campaign"
+    },
     "viewCompanies": "View Companies",
     "viewCommunications": "View Communications",
     "manageScrapers": "Manage Scrapers",
@@ -20,15 +28,12 @@
   },
   "recentActivity": {
     "title": "Recent Activity",
-    "description": "A log of recent events in your workspace.",
+    "description": "What's happened recently.",
     "noActivity": "No recent activity to display."
   },
   "cta": {
     "title": "Explore Market Intelligence",
-    "description": "Gain deeper insights into market trends and competitor strategies.",
-    "button": "Explore Market Intel"
-  },
-  "newScraper": "newScraper",
-  "newCampaign": "newCampaign",
-  "newMessage": "newMessage"
+    "description": "Discover new insights and opportunities.",
+    "button": "Go to Market Intelligence"
+  }
 }

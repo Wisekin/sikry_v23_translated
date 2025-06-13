@@ -1,20 +1,20 @@
 {
   "header": {
     "title": "Analytics Overview",
-    "subtitle": "Explore key metrics and insights across your application."
+    "subtitle": "Key metrics and navigation to detailed analytics sections."
   },
   "links": {
     "performance": {
       "title": "Performance Analytics",
-      "description": "Dive into traffic, engagement, and user behavior metrics."
+      "description": "Track key performance indicators and user engagement."
     },
     "conversion": {
-      "title": "Conversion Analytics",
-      "description": "Track funnel performance and identify drop-off points."
+      "title": "Conversion Funnels",
+      "description": "Analyze conversion rates across different funnels."
     },
     "revenue": {
-      "title": "Revenue Analytics",
-      "description": "Analyze sales trends, LTV, and revenue by source."
+      "title": "Revenue Insights",
+      "description": "Monitor financial performance and revenue trends."
     }
   },
   "title": "Analytics Overview",

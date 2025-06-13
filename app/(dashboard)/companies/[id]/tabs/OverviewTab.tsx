@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -34,6 +35,8 @@ interface OverviewTabProps {
 }
 
 export function OverviewTab({ company }: OverviewTabProps) {
+  const { t } = useTranslation(['companiesPage', 'common']);
+
   return (
     <div className="grid lg:grid-cols-2 gap-6">
       {/* Extracted Data */}
@@ -41,14 +44,14 @@ export function OverviewTab({ company }: OverviewTabProps) {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Shield className="w-5 h-5" />
-            Extracted Data
+            {t("tabs.overview.extractedData.title", { ns: 'companiesPage' })}
           </CardTitle>
-          <CardDescription>Automatically detected information with confidence scores</CardDescription>
+          <CardDescription>{t("tabs.overview.extractedData.description", { ns: 'companiesPage' })}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Emails */}
           <div>
-            <h4 className="font-medium mb-3">Email Addresses</h4>
+            <h4 className="font-medium mb-3">{t("tabs.overview.extractedData.emailAddressesTitle", { ns: 'companiesPage' })}</h4>
             <div className="space-y-2">
               {company.extractedData.emails.map((email, index) => (
                 <div key={index} className="flex items-center justify-between p-2 bg-muted rounded-lg">
@@ -65,7 +68,7 @@ export function OverviewTab({ company }: OverviewTabProps) {
 
           {/* Phones */}
           <div>
-            <h4 className="font-medium mb-3">Phone Numbers</h4>
+            <h4 className="font-medium mb-3">{t("tabs.overview.extractedData.phoneNumbersTitle", { ns: 'companiesPage' })}</h4>
             <div className="space-y-2">
               {company.extractedData.phones.map((phone, index) => (
                 <div key={index} className="flex items-center justify-between p-2 bg-muted rounded-lg">
@@ -82,7 +85,7 @@ export function OverviewTab({ company }: OverviewTabProps) {
 
           {/* Technologies */}
           <div>
-            <h4 className="font-medium mb-3">Technologies</h4>
+            <h4 className="font-medium mb-3">{t("tabs.overview.extractedData.technologiesTitle", { ns: 'companiesPage' })}</h4>
             <div className="grid grid-cols-2 gap-2">
               {company.extractedData.technologies.map((tech, index) => (
                 <div key={index} className="p-2 bg-muted rounded-lg">
@@ -102,32 +105,32 @@ export function OverviewTab({ company }: OverviewTabProps) {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <TrendingUp className="w-5 h-5" />
-            Data Quality Metrics
+            {t("tabs.overview.dataQualityMetrics.title", { ns: 'companiesPage' })}
           </CardTitle>
-          <CardDescription>Historical data extraction performance</CardDescription>
+          <CardDescription>{t("tabs.overview.dataQualityMetrics.description", { ns: 'companiesPage' })}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-4">
             <div>
               <div className="flex justify-between text-caption mb-2">
-                <span>Overall Confidence</span>
-                <span className="font-medium">{company.confidenceScore}%</span>
+                <span>{t("tabs.overview.dataQualityMetrics.overallConfidenceLabel", { ns: 'companiesPage' })}</span>
+                <span className="font-medium">{t("tabs.overview.dataQualityMetrics.percentageValue", { ns: 'companiesPage', value: company.confidenceScore })}</span>
               </div>
               <Progress value={company.confidenceScore} className="h-2" />
             </div>
 
             <div>
               <div className="flex justify-between text-caption mb-2">
-                <span>Data Completeness</span>
-                <span className="font-medium">85%</span>
+                <span>{t("tabs.overview.dataQualityMetrics.dataCompletenessLabel", { ns: 'companiesPage' })}</span>
+                <span className="font-medium">{t("tabs.overview.dataQualityMetrics.percentageValue", { ns: 'companiesPage', value: 85 })}</span>
               </div>
               <Progress value={85} className="h-2" />
             </div>
 
             <div>
               <div className="flex justify-between text-caption mb-2">
-                <span>Source Reliability</span>
-                <span className="font-medium">92%</span>
+                <span>{t("tabs.overview.dataQualityMetrics.sourceReliabilityLabel", { ns: 'companiesPage' })}</span>
+                <span className="font-medium">{t("tabs.overview.dataQualityMetrics.percentageValue", { ns: 'companiesPage', value: 92 })}</span>
               </div>
               <Progress value={92} className="h-2" />
             </div>
@@ -136,17 +139,17 @@ export function OverviewTab({ company }: OverviewTabProps) {
           <Separator />
 
           <div>
-            <h4 className="font-medium mb-3">Scraping History</h4>
+            <h4 className="font-medium mb-3">{t("tabs.overview.dataQualityMetrics.scrapingHistoryTitle", { ns: 'companiesPage' })}</h4>
             <div className="space-y-2">
               {company.scrapingHistory.map((entry, index) => (
                 <div key={index} className="flex items-center justify-between text-caption">
                   <span>{new Date(entry.date).toLocaleDateString()}</span>
                   <div className="flex items-center gap-2">
                     <Text size="sm" className="text-secondary">
-                      {entry.fieldsFound} fields
+                      {t("tabs.overview.dataQualityMetrics.fieldsFoundText", { ns: 'companiesPage', count: entry.fieldsFound })}
                     </Text>
                     <Badge variant="outline" className="text-xs">
-                      {entry.confidence}%
+                      {t("tabs.overview.dataQualityMetrics.percentageValue", { ns: 'companiesPage', value: entry.confidence })}
                     </Badge>
                   </div>
                 </div>
