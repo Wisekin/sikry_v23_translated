@@ -35,7 +35,7 @@ interface ConversionData {
 }
 
 const ConversionAnalyticsPage = () => {
-  const { t } = useTranslation('conversionAnalyticsPage');
+  const { t } = useTranslation(['conversionAnalyticsPage', 'common']); // Added common just in case, though not strictly needed for N/A if handled locally
   const [data, setData] = useState<ConversionData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -133,7 +133,7 @@ const ConversionAnalyticsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <QualityMetricCard title={t('summary.overallConversionRate')} value={`${summaryMetrics.overallConversionRatePercent.toFixed(1)}%`} icon={<Percent className="text-emerald-600" />} />
           <QualityMetricCard title={t('summary.totalConversions')} value={summaryMetrics.totalConversions.toLocaleString()} icon={<CheckCircle2 className="text-blue-600" />} />
-          <QualityMetricCard title={t('summary.topConvertingFunnel')} value={summaryMetrics.topConvertingFunnelName || 'N/A'} icon={<FunnelIcon className="text-purple-600" />} />
+          <QualityMetricCard title={t('summary.topConvertingFunnel')} value={summaryMetrics.topConvertingFunnelName || t('notAvailableShort')} icon={<FunnelIcon className="text-purple-600" />} />
           {summaryMetrics.avgCostPerConversion !== undefined && <QualityMetricCard title={t('summary.avgCostPerConversion')} value={`$${summaryMetrics.avgCostPerConversion.toFixed(2)}`} icon={<DollarSign className="text-amber-600" />} />}
         </div>
 
@@ -176,7 +176,7 @@ const ConversionAnalyticsPage = () => {
                   <tr key={source.source} className="hover:bg-gray-50/50">
                     <td className="px-4 py-3 font-medium text-gray-800">{source.source}</td>
                     <td className="px-4 py-3 text-right text-gray-600">{source.conversions.toLocaleString()}</td>
-                    <td className="px-4 py-3 text-right text-gray-600">{source.conversionRatePercent !== undefined ? `${source.conversionRatePercent.toFixed(1)}%` : 'N/A'}</td>
+                    <td className="px-4 py-3 text-right text-gray-600">{source.conversionRatePercent !== undefined ? `${source.conversionRatePercent.toFixed(1)}%` : t('notAvailableShort')}</td>
                   </tr>
                 ))}
               </tbody>

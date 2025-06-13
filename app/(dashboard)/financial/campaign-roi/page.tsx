@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import EnterprisePageHeader from '@/components/core/layout/EnterprisePageHeader';
 import QualityMetricCard from '@/components/ui/quality-metric-card';
 import { Target, TrendingUp, Percent, DollarSign } from 'lucide-react';
@@ -34,62 +35,64 @@ const CampaignRoiPage = () => {
     ? mockCampaigns.reduce((prev, current) => (prev.roiPercentage > current.roiPercentage) ? prev : current)
     : null;
 
+  const { t } = useTranslation(['financialPage', 'common']);
+
   return (
     <div className="bg-gray-50/50 min-h-screen">
-      <EnterprisePageHeader title="Campaign ROI Analysis" subtitle="Evaluate the performance of your marketing campaigns." />
+      <EnterprisePageHeader title={t('campaignROI.header.title')} subtitle={t('campaignROI.header.subtitle')} />
 
       <div className="p-6 md:p-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <QualityMetricCard
-            title="Overall Campaign ROI"
+            title={t('campaignROI.metrics.overallROI.title')}
             value={`${overallRoi.toFixed(2)}%`}
             icon={<Percent size={24} />}
-            change="+2.5% vs last period" // Mock change
+            change={t('campaignROI.metrics.overallROI.changeText', { value: "+2.5%" })} // Mock change, value can be dynamic
             changeColor={overallRoi >= 0 ? "text-green-600" : "text-red-600"}
           />
           {topPerformingCampaign && (
             <QualityMetricCard
-              title="Top Campaign"
-              value={topPerformingCampaign.name}
-              unit={`ROI: ${topPerformingCampaign.roiPercentage.toFixed(2)}%`}
+              title={t('campaignROI.metrics.topCampaign.title')}
+              value={topPerformingCampaign.name} // Campaign name itself is not translated from this mock
+              unit={t('campaignROI.metrics.topCampaign.roiLabel', { value: topPerformingCampaign.roiPercentage.toFixed(2) })}
               icon={<TrendingUp size={24} />}
             />
           )}
           <QualityMetricCard
-            title="Total Campaigns Tracked"
+            title={t('campaignROI.metrics.totalTracked.title')}
             value={mockCampaigns.length}
             icon={<Target size={24} />}
           />
         </div>
 
         <div className="mb-6 bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-          <h3 className="text-lg font-semibold text-[#1B1F3B] mb-3">Filters</h3>
+          <h3 className="text-lg font-semibold text-[#1B1F3B] mb-3">{t('campaignROI.filters.title')}</h3>
           <div className="flex flex-wrap items-center gap-4">
-            <input type="date" className="p-2 rounded border border-gray-300 bg-gray-100 text-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Start Date" />
-            <input type="date" className="p-2 rounded border border-gray-300 bg-gray-100 text-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="End Date" />
+            <input type="date" className="p-2 rounded border border-gray-300 bg-gray-100 text-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder={t('campaignROI.filters.startDatePlaceholder')} />
+            <input type="date" className="p-2 rounded border border-gray-300 bg-gray-100 text-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder={t('campaignROI.filters.endDatePlaceholder')} />
             <select className="p-2 rounded border border-gray-300 bg-gray-100 text-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-              <option value="">All Statuses</option>
-              <option value="active">Active</option>
-              <option value="completed">Completed</option>
-              <option value="planned">Planned</option>
+              <option value="">{t('campaignROI.filters.statusOptions.all')}</option>
+              <option value="active">{t('campaignROI.filters.statusOptions.active')}</option>
+              <option value="completed">{t('campaignROI.filters.statusOptions.completed')}</option>
+              <option value="planned">{t('campaignROI.filters.statusOptions.planned')}</option>
             </select>
-             <button className="p-2 rounded bg-blue-600 text-white text-sm hover:bg-blue-700 transition-colors">Apply Filters</button>
+             <button className="p-2 rounded bg-blue-600 text-white text-sm hover:bg-blue-700 transition-colors">{t('campaignROI.filters.applyButton')}</button>
           </div>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-          <h2 className="text-xl font-semibold mb-4 text-[#1B1F3B]">Campaign Performance Details</h2>
+          <h2 className="text-xl font-semibold mb-4 text-[#1B1F3B]">{t('campaignROI.table.title')}</h2>
           {mockCampaigns.length > 0 ? (
             <div className="overflow-x-auto">
               <table className="min-w-full">
                 <thead className="bg-gray-100">
                   <tr>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Campaign Name</th>
-                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">Spend</th>
-                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">Revenue</th>
-                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">Net Profit</th>
-                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">ROI (%)</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Status</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">{t('campaignROI.table.headers.campaignName')}</th>
+                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">{t('campaignROI.table.headers.spend')}</th>
+                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">{t('campaignROI.table.headers.revenue')}</th>
+                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">{t('campaignROI.table.headers.netProfit')}</th>
+                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">{t('campaignROI.table.headers.roiPercentage')}</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">{t('campaignROI.table.headers.status')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -110,7 +113,7 @@ const CampaignRoiPage = () => {
                           campaign.status === 'active' ? 'bg-blue-100 text-blue-800' :
                           'bg-yellow-100 text-yellow-800' // planned
                         }`}>
-                          {campaign.status}
+                          {t(`campaignROI.statuses.${campaign.status}`)}
                         </span>
                       </td>
                     </tr>
@@ -119,7 +122,7 @@ const CampaignRoiPage = () => {
               </table>
             </div>
           ) : (
-            <p className="text-gray-500">No campaign data found.</p>
+            <p className="text-gray-500">{t('campaignROI.table.noData')}</p>
           )}
         </div>
       </div>

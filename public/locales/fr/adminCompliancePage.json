@@ -1,43 +1,69 @@
 {
   "header": {
     "title": "Conformité",
-    "description": "Surveillez et gérez l'état de conformité de votre organisation.",
-    "auditButton": "Lancer l'audit"
+    "subtitle": "Surveillez et gérez l'état de conformité de votre organisation.",
+    "runAuditButton": "Lancer l'Audit"
   },
-  "tabs": {
+  "overview": {
+    "stats": {
+      "gdpr": {
+        "title": "Conformité RGPD",
+        "value": "{{percentage}}%",
+        "description": "Entièrement conforme"
+      },
+      "ccpa": {
+        "title": "Conformité CCPA",
+        "value": "{{percentage}}%",
+        "description": "Entièrement conforme"
+      },
+      "auditStatus": {
+        "title": "État de l'Audit",
+        "valuePassed": "Réussi",
+        "valueFailed": "Échoué",
+        "lastAuditFormat": "Dernier audit : {{timeAgo}}"
+      }
+    },
+    "mainContent": {
+      "title": "Aperçu de la Conformité",
+      "description": "État de conformité actuel et activités récentes"
+    }
+  },
+  "logsTab": {
+    "title": "Journaux de Conformité",
+    "description": "Visualisez et gérez les journaux de conformité"
+  },
+  "policiesTab": {
+    "title": "Politiques de Conformité",
+    "description": "Visualisez et gérez les politiques de conformité"
+  },
+  "reportsTab": {
+    "title": "Rapports de Conformité",
+    "description": "Visualisez et générez des rapports de conformité"
+  },
+  "legacyHeaderDescription": "Surveillez et gérez l'état de conformité de votre organisation.", // Old header.description
+  "legacyHeaderAuditButton": "Lancer l'audit", // Old header.auditButton
+  "legacyTabs": { // Old "tabs" structure
     "overview": "Aperçu",
     "logs": "Journaux",
     "policies": "Politiques",
     "reports": "Rapports"
   },
-  "overview": {
-    "gdpr": {
-      "title": "Conformité RGPD",
-      "status": "Entièrement conforme"
+  "legacyOverview": { // Old "overview" structure
+     "gdpr": {
+        "title": "Conformité RGPD",
+        "status": "Entièrement conforme"
     },
     "ccpa": {
-      "title": "Conformité CCPA",
-      "status": "Entièrement conforme"
+        "title": "Conformité CCPA",
+        "status": "Entièrement conforme"
     },
     "audit": {
-      "title": "État de l'audit",
-      "status": "Réussi",
-      "lastAudit": "Dernier audit : il y a {{days}} jours"
+        "title": "État de l'audit",
+        "status": "Réussi",
+        "lastAudit": "Dernier audit : il y a {{days}} jours"
     }
   },
-  "logs": {
-    "title": "Journaux de conformité",
-    "description": "Affichez et gérez les journaux de conformité",
-    "content": "Les entrées du journal de conformité seront affichées ici."
-  },
-  "policies": {
-    "title": "Politiques de conformité",
-    "description": "Affichez et gérez les politiques de conformité",
-    "content": "Les détails de la politique de conformité seront affichés ici."
-  },
-  "reports": {
-    "title": "Rapports de conformité",
-    "description": "Affichez et générez des rapports de conformité",
-    "content": "Les rapports de conformité seront affichés ici."
-  }
+   "legacyLogsContent": "Les entrées du journal de conformité seront affichées ici.",
+   "legacyPoliciesContent": "Les détails de la politique de conformité seront affichés ici.",
+   "legacyReportsContent": "Les rapports de conformité seront affichichées ici."
 }

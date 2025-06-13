@@ -2,12 +2,45 @@
   "header": {
     "title": "Users",
     "subtitle": "Manage your team members and their roles.",
-    "button": "Invite User"
+    "inviteUserButton": "Invite User" // Changed from "button" to "inviteUserButton"
   },
-  "list": {
+  "overview": {
+    "stats": {
+      "totalUsers": {
+        "title": "Total Users",
+        "description": "Active members"
+      },
+      "pendingInvites": {
+        "title": "Pending Invites",
+        "description": "Awaiting response"
+      },
+      "newUsers": {
+        "title": "New Users",
+        "description": "This month"
+      }
+    },
+    "mainContent": { // This was not in the original file under this structure
+      "title": "Users Overview",
+      "description": "Manage your team members and their roles."
+    }
+  },
+  "usersTab": {
+    "title": "Users",
+    "description": "View and manage all users",
+    "status": { // Merging with existing status, ensuring these specific keys are present
+      "active": "Active",
+      "inactive": "Inactive"
+    }
+  },
+  "invitesTab": {
+    "title": "Pending Invites",
+    "description": "Manage user invitations"
+  },
+  "searchInputPlaceholder": "Search by name or email...", // Top-level as requested
+  "list": { // Kept existing list structure if used by other parts not in current scope
     "title": "All Users",
     "description": "Showing {{count}} users.",
-    "searchPlaceholder": "Search by name or email..."
+    "searchPlaceholder": "Search by name or email..." // This is a duplicate of the top-level one, will keep top-level.
   },
   "table": {
     "name": "Name",
@@ -45,6 +78,7 @@
     "inactive": "Inactive",
     "suspended": "Suspended",
     "pending": "Pending"
+    // Ensuring active and inactive are here as per usersTab.status needs
   },
   "form": {
     "name": "Full Name",

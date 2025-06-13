@@ -1,42 +1,42 @@
 {
   "header": {
-    "title": "Facturation",
-    "subtitle": "Gérez vos informations de facturation et votre abonnement."
+    "title": "Gestion de la Facturation",
+    "subtitle": "Visualisez et gérez votre abonnement, vos factures et votre utilisation."
   },
   "buttons": {
-    "updatePaymentMethod": "Mettre à jour le mode de paiement"
+    "updatePaymentMethod": "Mettre à Jour le Moyen de Paiement"
   },
   "stats": {
     "currentPlan": {
-      "title": "Plan actuel",
-      "planName": "Pro",
-      "price": "49 $/mois"
+      "title": "Plan Actuel",
+      "planName": "Professionnel",
+      "priceFormat": "{{amount}}/mois"
     },
     "nextInvoice": {
-      "title": "Prochaine facture",
-      "amount": "49,00 $",
-      "due": "Exigible dans 15 jours"
+      "title": "Prochaine Facture",
+      "amount": "99,00 $", // Example value
+      "dueOnFormat": "Exigible le {{date}}"
     },
     "usage": {
-      "title": "Utilisation",
-      "usage": "75 %",
-      "ofMonthlyQuota": "Du quota mensuel"
+      "title": "Utilisation Actuelle",
+      "usageFormat": "{{currentUsage}} / {{quota}}",
+      "ofMonthlyQuota": "du quota mensuel"
     }
   },
   "billingOverview": {
-    "title": "Aperçu de la facturation",
-    "description": "Votre statut de facturation actuel et vos transactions récentes"
+    "title": "Aperçu de la Facturation",
+    "description": "Résumé de votre statut de facturation actuel et de votre historique."
   },
   "invoices": {
     "title": "Factures",
-    "description": "Affichez et gérez votre historique de facturation"
+    "description": "Visualisez et téléchargez vos factures passées."
   },
   "usageAnalytics": {
-    "title": "Analyse de l'utilisation",
-    "description": "Répartition détaillée de votre utilisation des services"
+    "title": "Analyses d'Utilisation",
+    "description": "Répartition détaillée de votre utilisation de la plateforme."
   },
   "availablePlans": {
-    "title": "Plans disponibles",
-    "description": "Comparez et basculez entre les différents plans d'abonnement"
+    "title": "Plans Disponibles",
+    "description": "Explorez et gérez vos plans d'abonnement."
   }
 }

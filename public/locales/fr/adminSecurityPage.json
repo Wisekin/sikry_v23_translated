@@ -17,5 +17,19 @@
     "title": "Clés API",
     "description": "Gérez les clés API pour un accès programmatique aux données de votre organisation.",
     "button": "Gérer les clés API"
+  },
+  "activeThreats": {
+    "title": "Menaces Actives",
+    "description": "Nécessite une attention immédiate"
+  },
+  "twoFaStatus": {
+    "title": "Statut 2FA",
+    "description": "Utilisateurs avec 2FA activée",
+    "valueFormat": "{{percentage}} %"
+  },
+  "securityScore": {
+    "title": "Score de Sécurité",
+    "description": "Notation globale de la sécurité",
+    "valueFormat": "{{score}}/{{maxScore}}"
   }
 }

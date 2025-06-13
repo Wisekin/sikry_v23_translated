@@ -11,8 +11,10 @@ import { Label } from "@/components/ui/label"
 import { useAuth } from "@/providers/AuthProvider"
 import { Eye, EyeOff, Mail, Lock, User } from "lucide-react"
 import Link from "next/link"
+import { useTranslation } from 'react-i18next';
 
 export default function SignupPage() {
+  const { t } = useTranslation('auth');
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -32,7 +34,7 @@ export default function SignupPage() {
     setError("")
 
     if (formData.password !== formData.confirmPassword) {
-      setError("Passwords don't match")
+      setError(t('errors.passwordsDontMatch'));
       setLoading(false)
       return
     }
@@ -41,7 +43,7 @@ export default function SignupPage() {
       await signUp(formData.email, formData.password)
       router.push("/dashboard")
     } catch (err) {
-      setError("Failed to create account")
+      setError(t('errors.accountCreationFailed'));
     } finally {
       setLoading(false)
     }
@@ -60,20 +62,20 @@ export default function SignupPage() {
               <span className="text-white font-bold text-xl">S</span>
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold text-center">Create account</CardTitle>
-          <CardDescription className="text-center">Get started with SIKRY today</CardDescription>
+          <CardTitle className="text-2xl font-bold text-center">{t('signup.title')}</CardTitle>
+          <CardDescription className="text-center">{t('signup.description')}</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Label htmlFor="firstName">First name</Label>
+                <Label htmlFor="firstName">{t('signup.firstNameLabel')}</Label>
                 <div className="relative">
                   <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                   <Input
                     id="firstName"
                     name="firstName"
-                    placeholder="John"
+                    placeholder={t('signup.firstNamePlaceholder')}
                     value={formData.firstName}
                     onChange={handleChange}
                     className="pl-10"
@@ -82,11 +84,11 @@ export default function SignupPage() {
                 </div>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="lastName">Last name</Label>
+                <Label htmlFor="lastName">{t('signup.lastNameLabel')}</Label>
                 <Input
                   id="lastName"
                   name="lastName"
-                  placeholder="Doe"
+                  placeholder={t('signup.lastNamePlaceholder')}
                   value={formData.lastName}
                   onChange={handleChange}
                   required
@@ -94,14 +96,14 @@ export default function SignupPage() {
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('email')}</Label> {/* Using common 'email' key */}
               <div className="relative">
                 <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder={t('signup.emailPlaceholder')} {/* Specific placeholder for signup */}
                   value={formData.email}
                   onChange={handleChange}
                   className="pl-10"
@@ -110,14 +112,14 @@ export default function SignupPage() {
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">{t('password')}</Label> {/* Using common 'password' key */}
               <div className="relative">
                 <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                 <Input
                   id="password"
                   name="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="Create a password"
+                  placeholder={t('signup.passwordPlaceholder')} {/* Specific placeholder for signup */}
                   value={formData.password}
                   onChange={handleChange}
                   className="pl-10 pr-10"
@@ -135,12 +137,12 @@ export default function SignupPage() {
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="confirmPassword">Confirm password</Label>
+              <Label htmlFor="confirmPassword">{t('signup.confirmPasswordLabel')}</Label>
               <Input
                 id="confirmPassword"
                 name="confirmPassword"
                 type="password"
-                placeholder="Confirm your password"
+                placeholder={t('signup.confirmPasswordPlaceholder')}
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 required
@@ -148,13 +150,13 @@ export default function SignupPage() {
             </div>
             {error && <div className="text-sm text-red-600 bg-red-50 p-2 rounded">{error}</div>}
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Creating account..." : "Create account"}
+              {loading ? t('signup.buttons.creatingAccount') : t('signup.buttons.createAccount')}
             </Button>
           </form>
           <div className="mt-6 text-center text-sm">
-            Already have an account?{" "}
+            {t('signup.alreadyHaveAccount')}{" "}
             <Link href="/login" className="text-primary hover:underline">
-              Sign in
+              {t('signup.signInLink')}
             </Link>
           </div>
         </CardContent>

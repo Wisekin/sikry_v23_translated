@@ -1,42 +1,43 @@
 {
   "header": {
-    "title": "Gestion de l'équipe",
-    "description": "Gérez les membres de votre équipe, leurs rôles et leurs autorisations.",
-    "inviteButton": "Inviter un membre"
+    "title": "Gestion de l'Équipe",
+    "description": "Gérez les membres de l'équipe, leurs rôles et leurs permissions.",
+    "inviteButton": "Inviter un Membre"
   },
   "overview": {
     "stats": {
       "totalMembers": {
-        "title": "Total des membres",
-        "description": "Membres actifs de l'équipe"
+        "title": "Membres Totals",
+        "description": "Actuellement dans l'équipe"
       },
       "pendingInvites": {
-        "title": "Invitations en attente",
-        "description": "En attente de réponse"
+        "title": "Invitations en Attente",
+        "description": "En attente d'acceptation"
       },
       "activeRoles": {
-        "title": "Rôles actifs",
-        "description": "Rôles personnalisés définis"
+        "title": "Rôles Actifs",
+        "description": "Rôles configurés dans le système"
       }
     },
     "main": {
-      "title": "Aperçu de l'équipe",
-      "description": "Gérez les membres de votre équipe et leurs rôles"
+      "title": "Aperçu de l'Équipe",
+      "description": "Résumé de la structure et de l'activité de l'équipe."
     }
   },
   "members": {
-    "title": "Membres de l'équipe",
-    "description": "Afficher et gérer les membres de l'équipe",
+    "title": "Membres de l'Équipe",
+    "description": "Visualisez et gérez tous les membres de l'équipe.",
     "status": {
-      "active": "Actif"
+      "active": "Actif",
+      "inactive": "Inactif"
     }
   },
   "roles": {
-    "title": "Rôles de l'équipe",
-    "description": "Gérer les rôles et les responsabilités de l'équipe"
+    "title": "Rôles & Permissions",
+    "description": "Définissez et gérez les rôles des utilisateurs et leurs permissions."
   },
   "permissions": {
-    "title": "Autorisations",
-    "description": "Configurer les autorisations d'accès pour les rôles"
+    "title": "Permissions Globales",
+    "description": "Gérez les paramètres de permission globaux pour la plateforme."
   }
 }

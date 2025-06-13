@@ -1,46 +1,47 @@
 {
   "header": {
-    "title": "Analyse des conversions",
-    "subtitle": "Comprenez comment les utilisateurs convertissent à travers les entonnoirs clés."
+    "title": "Analyse des Conversions", // Updated to match task example more closely
+    "subtitle": "Comprenez comment les utilisateurs convertissent à travers les entonnoirs clés." // Kept existing as it's contextually good
   },
-  "loading": "Analyse des entonnoirs de conversion...",
+  "loading": "Chargement des données...",
   "error": {
     "fetch": "Échec de la récupération des données de conversion.",
-    "title": "Impossible de charger les données de conversion",
+    "title": "Erreur de Chargement des Données",
     "tryAgain": "Réessayer"
   },
-  "noData": "Aucune donnée de conversion disponible pour les filtres sélectionnés.",
+  "noData": "Aucune donnée de conversion disponible pour la période sélectionnée.",
   "filters": {
-    "period": "Période :",
+    "period": "Période", // Removed colon
     "last7days": "7 derniers jours",
     "last30days": "30 derniers jours",
     "last3months": "3 derniers mois",
-    "funnel": "Entonnoir :",
-    "allFunnels": "Tous les entonnoirs (Global)",
-    "onboardingFunnel": "Entonnoir d'intégration",
-    "salesFunnelQ4": "Entonnoir de vente T4"
+    "funnel": "Entonnoir", // Removed colon
+    "allFunnels": "Tous les Entonnoirs",
+    "onboardingFunnel": "Entonnoir d'Intégration", // Adjusted for consistency
+    "salesFunnelQ4": "Entonnoir de Vente T4"
   },
   "summary": {
-    "overallConversionRate": "Taux de conv. global",
-    "totalConversions": "Conversions totales",
-    "topConvertingFunnel": "Meilleur entonnoir de conv.",
-    "avgCostPerConversion": "Coût moy. / Conversion"
+    "overallConversionRate": "Taux de Conversion Global",
+    "totalConversions": "Conversions Totales", // Adjusted for consistency
+    "topConvertingFunnel": "Entonnoir le Plus Performant", // Adjusted for consistency
+    "avgCostPerConversion": "Coût Moyen par Conversion" // Adjusted for consistency
   },
   "charts": {
     "funnel": {
-      "title": "Répartition de l'entonnoir",
-      "description": "Suivez la progression des utilisateurs à chaque étape de l'entonnoir sélectionné.",
+      "title": "Performance de l'Entonnoir",
+      "description": "Suivez la progression des utilisateurs à chaque étape de l'entonnoir sélectionné.", // Kept existing
       "visitors": "Visiteurs",
-      "conversion": "Conv. depuis l'étape préc. :",
-      "dropoff": "Abandon :",
-      "entryPoint": "Point d'entrée"
+      "conversion": "Conversion", // Simplified from "Conv. depuis l'étape préc. :"
+      "dropoff": "Abandon", // Simplified
+      "entryPoint": "Point d'Entrée" // Adjusted for consistency
     },
     "source": {
-      "title": "Conversions par source",
-      "description": "Identifiez les canaux qui génèrent le plus de conversions.",
+      "title": "Conversions par Source",
+      "description": "Identifiez les canaux qui génèrent le plus de conversions.", // Kept existing
       "source": "Source",
       "conversions": "Conversions",
-      "rate": "Taux de conversion (%)"
+      "rate": "Taux" // Simplified from "Taux de conversion (%)"
     }
-  }
+  },
+  "notAvailableShort": "N/D"
 }

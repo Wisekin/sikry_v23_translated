@@ -165,5 +165,13 @@
     "notConnected": "Non connecté"
   },
   "percentageFormat": "{{value}} %",
-  "copy": "Copier"
+  "copy": "Copier",
+  "export": "Exporter",
+  "filters": "Filtres",
+  "all": "Tous",
+  "date": "Date",
+  "description": "Description",
+  "type": "Type",
+  "edit": "Modifier",
+  "delete": "Supprimer"
 }

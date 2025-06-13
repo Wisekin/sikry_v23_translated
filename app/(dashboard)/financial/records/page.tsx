@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import EnterprisePageHeader from '@/components/core/layout/EnterprisePageHeader';
 import QualityMetricCard from '@/components/ui/quality-metric-card';
 import { Briefcase, TrendingUp, TrendingDown } from 'lucide-react';
@@ -20,55 +21,57 @@ const FinancialRecordsPage = () => {
   const netProfit = totalRevenue - totalExpenses;
 
   // Example change data (replace with actual logic if available)
-  const revenueChange = "+5.2% this month";
-  const expenseChange = "+1.8% this month";
-  const profitChange = "+10.5% this month";
+  // These raw percentage strings will be replaced by t() calls with interpolation
+  const revenueChangeValue = "+5.2%"; // Example value
+  const expenseChangeValue = "+1.8%"; // Example value
+  const profitChangeValue = "+10.5%"; // Example value
 
+  const { t } = useTranslation(['financialPage', 'common']);
 
   return (
     <div className="bg-gray-50/50 min-h-screen">
-      <EnterprisePageHeader title="Financial Records" subtitle="View and manage your financial transactions." />
+      <EnterprisePageHeader title={t('recordsPage.header.title')} subtitle={t('recordsPage.header.subtitle')} />
 
       <div className="p-6 md:p-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <QualityMetricCard
-            title="Total Revenue"
+            title={t('recordsPage.metrics.totalRevenue.title')}
             value={totalRevenue.toLocaleString()}
-            unit="USD"
+            unit={t('recordsPage.metrics.currencyUnit.usd')}
             icon={<TrendingUp size={24} />}
-            change={revenueChange}
+            change={t('recordsPage.metrics.changeSuffix', { value: revenueChangeValue })}
             changeColor="text-green-600"
           />
           <QualityMetricCard
-            title="Total Expenses"
+            title={t('recordsPage.metrics.totalExpenses.title')}
             value={totalExpenses.toLocaleString()}
-            unit="USD"
+            unit={t('recordsPage.metrics.currencyUnit.usd')}
             icon={<TrendingDown size={24} />}
-            change={expenseChange}
+            change={t('recordsPage.metrics.changeSuffix', { value: expenseChangeValue })}
             changeColor="text-red-600"
           />
           <QualityMetricCard
-            title="Net Profit"
+            title={t('recordsPage.metrics.netProfit.title')}
             value={netProfit.toLocaleString()}
-            unit="USD"
+            unit={t('recordsPage.metrics.currencyUnit.usd')}
             icon={<Briefcase size={24} />}
-            change={profitChange}
+            change={t('recordsPage.metrics.changeSuffix', { value: profitChangeValue })}
             changeColor="text-green-600"
           />
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-sm">
-          <h2 className="text-xl font-semibold mb-4 text-[#1B1F3B]">Transaction List</h2>
+          <h2 className="text-xl font-semibold mb-4 text-[#1B1F3B]">{t('recordsPage.table.title')}</h2>
           {mockRecords.length > 0 ? (
             <div className="overflow-x-auto">
               <table className="min-w-full">
                 <thead className="bg-gray-100">
                   <tr>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Date</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Description</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Type</th>
-                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">Amount</th>
-                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">Currency</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">{t('recordsPage.table.headers.date')}</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">{t('recordsPage.table.headers.description')}</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">{t('recordsPage.table.headers.type')}</th>
+                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">{t('recordsPage.table.headers.amount')}</th>
+                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">{t('recordsPage.table.headers.currency')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -80,7 +83,7 @@ const FinancialRecordsPage = () => {
                         <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                           record.type === 'income' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
                         }`}>
-                          {record.type}
+                          {t(`recordsPage.types.${record.type}`)}
                         </span>
                       </td>
                       <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-800 text-right">{record.amount.toLocaleString()}</td>
@@ -91,7 +94,7 @@ const FinancialRecordsPage = () => {
               </table>
             </div>
           ) : (
-            <p className="text-gray-500">No financial records found.</p>
+            <p className="text-gray-500">{t('recordsPage.table.noData')}</p>
           )}
           {/* TODO: Add pagination and filtering options */}
         </div>
