@@ -118,7 +118,7 @@
   "search.refine": "search.refine",
   "search.filters.marketing": "search.filters.marketing",
   "search.filters.label": "search.filters.label",
-  "loading": "loading",
+  "loading": "Chargement...",
   "nav.secondary.addCompany": "nav.secondary.addCompany",
   "nav.secondary.importCompanies": "nav.secondary.importCompanies",
   "dashboard.overview": "dashboard.overview",
@@ -152,6 +152,18 @@
   "scrapers.createFirstScraper": "scrapers.createFirstScraper",
   "search.filters.softwareDev": "search.filters.softwareDev",
   "search.filters.fintech": "search.filters.fintech",
-  "ai.suggestions.leadStrategy": "ai.suggestions.leadStrategy"
-}
+  "ai.suggestions.leadStrategy": "ai.suggestions.leadStrategy",
+  "actions": "Actions",
+  "viewDetails": "Voir les détails",
+  "notAvailable": "N/A",
+  "status": {
+    "pending": "En attente",
+    "verified": "Vérifié",
+    "enabled": "Activé",
+    "disabled": "Désactivé",
+    "connected": "Connecté",
+    "notConnected": "Non connecté"
+  },
+  "percentageFormat": "{{value}} %",
+  "copy": "Copier"
 }

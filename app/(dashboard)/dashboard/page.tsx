@@ -51,29 +51,29 @@ export default function DashboardPage() {
 
   const quickActions = [
     {
-      title: t("addNewCompany"),
-      description: t("addNewCompany"),
+      title: t("quickActions.buttons.addNewCompany"),
+      description: t("quickActions.buttons.addNewCompany"),
       icon: Building2,
       href: "/companies/new",
       color: "bg-blue-500",
     },
     {
-      title: t("newMessage"),
-      description: t("newMessage"),
+      title: t("quickActions.buttons.newMessage"),
+      description: t("quickActions.buttons.newMessage"),
       icon: MessageSquare,
       href: "/comms/new",
       color: "bg-green-500",
     },
     {
-      title: t("newScraper"),
-      description: t("newScraper"),
+      title: t("quickActions.buttons.newScraper"),
+      description: t("quickActions.buttons.newScraper"),
       icon: Bot,
       href: "/scrapers/new",
       color: "bg-purple-500",
     },
     {
-      title: t("newCampaign"),
-      description: t("newCampaign"),
+      title: t("quickActions.buttons.newCampaign"),
+      description: t("quickActions.buttons.newCampaign"),
       icon: Calendar,
       href: "/comms/campaigns/new",
       color: "bg-orange-500",
@@ -97,7 +97,7 @@ export default function DashboardPage() {
           <p className="text-muted-foreground">{t("subtitle")}</p>
         </div>
         <Button onClick={() => router.push("/companies/new")} className="mt-4 md:mt-0">
-          <Plus className="mr-2 h-4 w-4" /> {t("addNewCompany")}
+          <Plus className="mr-2 h-4 w-4" /> {t("header.addNewCompanyButton")}
         </Button>
       </header>
 

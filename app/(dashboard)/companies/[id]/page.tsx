@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useParams } from "next/navigation"
+import { useTranslation } from 'react-i18next';
 import { AppShell } from "@/components/core/layout/AppShell"
 import { Heading } from "@/components/core/typography/Heading"
 import { Text } from "@/components/core/typography/Text"
@@ -40,6 +41,7 @@ interface CompanyData {
 
 export default function CompanyDetailPage() {
   const params = useParams()
+  const { t } = useTranslation(['companiesPage', 'common']);
   const companyId = params.id as string
   const [company, setCompany] = useState<CompanyData | null>(null)
   const [loading, setLoading] = useState(true)
@@ -108,7 +110,7 @@ export default function CompanyDetailPage() {
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
             <Loader2 className="w-8 h-8 animate-spin text-accent mx-auto mb-4" />
-            <Text className="text-secondary">Loading company details...</Text>
+            <Text className="text-secondary">{t("detailsView.loadingText", { ns: 'companiesPage' })}</Text>
           </div>
         </div>
       </AppShell>
@@ -120,11 +122,11 @@ export default function CompanyDetailPage() {
       <AppShell>
         <div className="text-center py-12">
           <Heading level={2} className="mb-2">
-            Company Not Found
+            {t("detailsView.notFound.title", { ns: 'companiesPage' })}
           </Heading>
-          <Text className="text-secondary mb-4">The company you're looking for doesn't exist.</Text>
+          <Text className="text-secondary mb-4">{t("detailsView.notFound.description", { ns: 'companiesPage' })}</Text>
           <Button asChild>
-            <Link href="/companies">Back to Companies</Link>
+            <Link href="/companies">{t("detailsView.goBackToListButton", { ns: 'companiesPage' })}</Link>
           </Button>
         </div>
       </AppShell>
@@ -138,7 +140,7 @@ export default function CompanyDetailPage() {
         <Button variant="ghost" size="sm" asChild>
           <Link href="/companies">
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Companies
+            {t("detailsView.goBackToListButton", { ns: 'companiesPage' })}
           </Link>
         </Button>
 
@@ -148,10 +150,10 @@ export default function CompanyDetailPage() {
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="engagement">Engagement</TabsTrigger>
-            <TabsTrigger value="insights">Insights</TabsTrigger>
-            <TabsTrigger value="configuration">Configuration</TabsTrigger>
+            <TabsTrigger value="overview">{t("tabs.overview", { ns: 'companiesPage' })}</TabsTrigger>
+            <TabsTrigger value="engagement">{t("tabs.engagement", { ns: 'companiesPage' })}</TabsTrigger>
+            <TabsTrigger value="insights">{t("tabs.insights", { ns: 'companiesPage' })}</TabsTrigger>
+            <TabsTrigger value="configuration">{t("tabs.configuration", { ns: 'companiesPage' })}</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview">

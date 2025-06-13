@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -78,12 +79,13 @@ Closing:
 }
 
 export default function TemplatePage({ params }: { params: { id: string } }) {
+  const { t } = useTranslation('commsPage');
   const template = templates[params.id as keyof typeof templates]
 
   if (!template) {
     return (
       <div className="container mx-auto py-6">
-        <h1 className="text-3xl font-bold">Template not found</h1>
+        <h1 className="text-3xl font-bold">{t('templateDetailPage.notFound')}</h1>
       </div>
     )
   }
@@ -98,15 +100,15 @@ export default function TemplatePage({ params }: { params: { id: string } }) {
         <div className="flex gap-2">
           <Button variant="outline" size="sm">
             <Edit2 className="mr-2 h-4 w-4" />
-            Edit
+            {t('templateDetailPage.buttons.edit')}
           </Button>
           <Button variant="outline" size="sm">
             <Copy className="mr-2 h-4 w-4" />
-            Duplicate
+            {t('templateDetailPage.buttons.duplicate')}
           </Button>
           <Button variant="outline" size="sm" className="text-red-500 hover:text-red-600">
             <Trash2 className="mr-2 h-4 w-4" />
-            Delete
+            {t('templateDetailPage.buttons.delete')}
           </Button>
         </div>
       </div>
@@ -114,7 +116,7 @@ export default function TemplatePage({ params }: { params: { id: string } }) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <Card className="lg:col-span-2">
           <CardHeader>
-            <CardTitle>Template Content</CardTitle>
+            <CardTitle>{t('templateDetailPage.contentCard.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="bg-muted p-4 rounded-lg">
@@ -126,22 +128,22 @@ export default function TemplatePage({ params }: { params: { id: string } }) {
         <div className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Template Details</CardTitle>
+              <CardTitle>{t('templateDetailPage.detailsCard.title')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <Label>Type</Label>
+                <Label>{t('templateDetailPage.detailsCard.typeLabel')}</Label>
                 <div className="flex items-center gap-2 mt-1">
                   <template.icon className="h-4 w-4 text-primary" />
-                  <span className="capitalize">{template.type}</span>
+                  <span className="capitalize">{t(`templatesList.types.${template.type}`)}</span>
                 </div>
               </div>
               <div>
-                <Label>Last Modified</Label>
+                <Label>{t('templateDetailPage.detailsCard.lastModifiedLabel')}</Label>
                 <p className="mt-1">{template.lastModified}</p>
               </div>
               <div>
-                <Label>Variables</Label>
+                <Label>{t('templateDetailPage.detailsCard.variablesLabel')}</Label>
                 <div className="mt-1 space-y-1">
                   {template.content.match(/{{([^}]+)}}/g)?.map((variable) => (
                     <div key={variable} className="text-sm text-muted-foreground">

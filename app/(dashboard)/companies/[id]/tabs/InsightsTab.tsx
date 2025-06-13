@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { TrendingUp } from "lucide-react"
 import { Text } from "@/components/core/typography/Text"
@@ -31,20 +32,22 @@ interface InsightsTabProps {
 }
 
 export function InsightsTab({ company }: InsightsTabProps) {
+  const { t } = useTranslation(['companiesPage', 'common']);
+
   return (
     <Card className="shadow-card">
       <CardHeader>
-        <CardTitle>AI-Generated Insights</CardTitle>
-        <CardDescription>Intelligent analysis of company data and market position</CardDescription>
+        <CardTitle>{t("tabs.insights.title", { ns: 'companiesPage' })}</CardTitle>
+        <CardDescription>{t("tabs.insights.description", { ns: 'companiesPage' })}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="text-center py-12">
           <TrendingUp className="w-16 h-16 mx-auto text-secondary mb-4" />
           <Heading level={3} className="mb-2">
-            AI Insights Coming Soon
+            {t("tabs.insights.comingSoon.title", { ns: 'companiesPage' })}
           </Heading>
           <Text className="text-secondary">
-            Advanced market intelligence and competitive analysis will be available in the next update.
+            {t("tabs.insights.comingSoon.description", { ns: 'companiesPage' })}
           </Text>
         </div>
       </CardContent>

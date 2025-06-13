@@ -13,7 +13,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Mail, Linkedin, Phone, PlusCircle, Users } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react" // Added useEffect for campaignTypes initialization
+import { useTranslation } from 'react-i18next';
 import {
   Dialog,
   DialogContent,
@@ -28,13 +29,26 @@ export const metadata = {
   description: "Create a new communication campaign",
 }
 
+// Define static part of campaign types outside component
+const staticCampaignTypes = [
+  { value: "email", icon: Mail, labelKey: "newCampaignPage.form.campaignTypes.email" },
+  { value: "linkedin", icon: Linkedin, labelKey: "newCampaignPage.form.campaignTypes.linkedin" },
+  { value: "phone", icon: Phone, labelKey: "newCampaignPage.form.campaignTypes.phone" },
+  { value: "multi-channel", icon: Users, labelKey: "newCampaignPage.form.campaignTypes.multiChannel" },
+];
+
 export default function NewCampaignPage() {
-  const [campaignTypes, setCampaignTypes] = useState([
-    { value: "email", label: "Email Campaign", icon: Mail },
-    { value: "linkedin", label: "LinkedIn Campaign", icon: Linkedin },
-    { value: "phone", label: "Phone Campaign", icon: Phone },
-    { value: "multi-channel", label: "Multi-Channel Campaign", icon: Users },
-  ])
+  const { t } = useTranslation('commsPage');
+  const [campaignTypes, setCampaignTypes] = useState<any[]>([]);
+
+  useEffect(() => {
+    setCampaignTypes(
+      staticCampaignTypes.map(type => ({
+        ...type,
+        label: t(type.labelKey)
+      }))
+    );
+  }, [t]);
 
   const [newType, setNewType] = useState({
     value: "",
@@ -52,43 +66,44 @@ export default function NewCampaignPage() {
   return (
     <div className="container mx-auto py-6 space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">New Campaign</h1>
-        <p className="text-muted-foreground">Create a new communication campaign</p>
+        <h1 className="text-3xl font-bold tracking-tight">{t('newCampaignPage.header.title')}</h1>
+        <p className="text-muted-foreground">{t('newCampaignPage.header.description')}</p>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>Campaign Details</CardTitle>
+          <CardTitle>{t('newCampaignPage.detailsCard.title')}</CardTitle>
         </CardHeader>
         <CardContent>
           <form className="space-y-6">
             <div className="space-y-4">
               <div>
-                <Label htmlFor="name">Campaign Name</Label>
-                <Input id="name" placeholder="Enter campaign name" />
+                <Label htmlFor="name">{t('newCampaignPage.form.nameLabel')}</Label>
+                <Input id="name" placeholder={t('newCampaignPage.form.namePlaceholder')} />
               </div>
 
               <div>
-                <Label htmlFor="type">Campaign Type</Label>
+                <Label htmlFor="type">{t('newCampaignPage.form.typeLabel')}</Label>
                 <div className="flex gap-2">
                   <Select>
                     <SelectTrigger className="flex-1">
-                      <SelectValue placeholder="Select campaign type" />
+                      <SelectValue placeholder={t('newCampaignPage.form.typePlaceholder')} />
                     </SelectTrigger>
                     <SelectContent>
                       {campaignTypes.map((type) => (
                         <SelectItem key={type.value} value={type.value}>
                           <div className="flex items-center gap-2">
-                            {type.icon === "Mail" ? (
+                            {/* Icon rendering logic remains, assuming icons are not translated */}
+                            {type.icon === Mail ? (
                               <Mail className="h-4 w-4" />
-                            ) : type.icon === "Linkedin" ? (
+                            ) : type.icon === Linkedin ? (
                               <Linkedin className="h-4 w-4" />
-                            ) : type.icon === "Phone" ? (
+                            ) : type.icon === Phone ? (
                               <Phone className="h-4 w-4" />
                             ) : (
                               <Users className="h-4 w-4" />
                             )}
-                            <span>{type.label}</span>
+                            <span>{type.label}</span> {/* Label is now translated via useEffect */}
                           </div>
                         </SelectItem>
                       ))}
@@ -102,14 +117,14 @@ export default function NewCampaignPage() {
                     </DialogTrigger>
                     <DialogContent>
                       <DialogHeader>
-                        <DialogTitle>Add New Campaign Type</DialogTitle>
+                        <DialogTitle>{t('newCampaignPage.addTypeDialog.title')}</DialogTitle>
                       </DialogHeader>
                       <div className="space-y-4 py-4">
                         <div>
-                          <Label htmlFor="typeValue">Type Value</Label>
+                          <Label htmlFor="typeValue">{t('newCampaignPage.addTypeDialog.valueLabel')}</Label>
                           <Input
                             id="typeValue"
-                            placeholder="e.g., sms"
+                            placeholder={t('newCampaignPage.addTypeDialog.valuePlaceholder')}
                             value={newType.value}
                             onChange={(e) =>
                               setNewType({ ...newType, value: e.target.value })
@@ -117,10 +132,10 @@ export default function NewCampaignPage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="typeLabel">Type Label</Label>
+                          <Label htmlFor="typeLabel">{t('newCampaignPage.addTypeDialog.labelLabel')}</Label>
                           <Input
                             id="typeLabel"
-                            placeholder="e.g., SMS Campaign"
+                            placeholder={t('newCampaignPage.addTypeDialog.labelPlaceholder')}
                             value={newType.label}
                             onChange={(e) =>
                               setNewType({ ...newType, label: e.target.value })
@@ -128,7 +143,7 @@ export default function NewCampaignPage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="typeIcon">Icon</Label>
+                          <Label htmlFor="typeIcon">{t('newCampaignPage.addTypeDialog.iconLabel')}</Label>
                           <Select
                             value={newType.icon}
                             onValueChange={(value) =>
@@ -136,18 +151,18 @@ export default function NewCampaignPage() {
                             }
                           >
                             <SelectTrigger>
-                              <SelectValue placeholder="Select an icon" />
+                              <SelectValue placeholder={t('newCampaignPage.addTypeDialog.iconPlaceholder')} />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="Mail">Mail</SelectItem>
-                              <SelectItem value="Linkedin">LinkedIn</SelectItem>
-                              <SelectItem value="Phone">Phone</SelectItem>
-                              <SelectItem value="Users">Users</SelectItem>
+                              <SelectItem value="Mail">{t('newCampaignPage.addTypeDialog.iconOptions.mail')}</SelectItem>
+                              <SelectItem value="Linkedin">{t('newCampaignPage.addTypeDialog.iconOptions.linkedin')}</SelectItem>
+                              <SelectItem value="Phone">{t('newCampaignPage.addTypeDialog.iconOptions.phone')}</SelectItem>
+                              <SelectItem value="Users">{t('newCampaignPage.addTypeDialog.iconOptions.users')}</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
                         <Button onClick={handleAddType} className="w-full">
-                          Add Type
+                          {t('newCampaignPage.addTypeDialog.addButton')}
                         </Button>
                       </div>
                     </DialogContent>
@@ -156,50 +171,50 @@ export default function NewCampaignPage() {
               </div>
 
               <div>
-                <Label htmlFor="description">Description</Label>
+                <Label htmlFor="description">{t('newCampaignPage.form.descriptionLabel')}</Label>
                 <Textarea
                   id="description"
-                  placeholder="Enter campaign description"
+                  placeholder={t('newCampaignPage.form.descriptionPlaceholder')}
                   rows={3}
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label>Start Date</Label>
+                  <Label>{t('newCampaignPage.form.startDateLabel')}</Label>
                   <DatePicker />
                 </div>
                 <div>
-                  <Label>End Date</Label>
+                  <Label>{t('newCampaignPage.form.endDateLabel')}</Label>
                   <DatePicker />
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="targetAudience">Target Audience</Label>
+                <Label htmlFor="targetAudience">{t('newCampaignPage.form.targetAudienceLabel')}</Label>
                 <Select>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select target audience" />
+                    <SelectValue placeholder={t('newCampaignPage.form.targetAudiencePlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Contacts</SelectItem>
-                    <SelectItem value="leads">Leads</SelectItem>
-                    <SelectItem value="customers">Customers</SelectItem>
-                    <SelectItem value="custom">Custom List</SelectItem>
+                    <SelectItem value="all">{t('newCampaignPage.form.targetAudienceOptions.all')}</SelectItem>
+                    <SelectItem value="leads">{t('newCampaignPage.form.targetAudienceOptions.leads')}</SelectItem>
+                    <SelectItem value="customers">{t('newCampaignPage.form.targetAudienceOptions.customers')}</SelectItem>
+                    <SelectItem value="custom">{t('newCampaignPage.form.targetAudienceOptions.custom')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div>
-                <Label htmlFor="template">Template</Label>
+                <Label htmlFor="template">{t('newCampaignPage.form.templateLabel')}</Label>
                 <Select>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a template" />
+                    <SelectValue placeholder={t('newCampaignPage.form.templatePlaceholder')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="welcome">Welcome Email</SelectItem>
-                    <SelectItem value="follow-up">Follow-up Message</SelectItem>
-                    <SelectItem value="promotion">Promotional Offer</SelectItem>
+                    <SelectItem value="welcome">{t('newCampaignPage.form.templateOptions.welcome')}</SelectItem>
+                    <SelectItem value="follow-up">{t('newCampaignPage.form.templateOptions.followUp')}</SelectItem>
+                    <SelectItem value="promotion">{t('newCampaignPage.form.templateOptions.promotion')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -207,9 +222,9 @@ export default function NewCampaignPage() {
 
             <div className="flex justify-end gap-4">
               <Button variant="outline" type="button">
-                Save as Draft
+                {t('newCampaignPage.buttons.saveDraft')}
               </Button>
-              <Button type="submit">Create Campaign</Button>
+              <Button type="submit">{t('newCampaignPage.buttons.createCampaign')}</Button>
             </div>
           </form>
         </CardContent>

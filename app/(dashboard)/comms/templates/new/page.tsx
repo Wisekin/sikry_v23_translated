@@ -13,7 +13,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Mail, Linkedin, Phone, PlusCircle } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react" // Added useEffect
+import { useTranslation } from 'react-i18next';
 import {
   Dialog,
   DialogContent,
@@ -23,12 +24,25 @@ import {
 } from "@/components/ui/dialog"
 
 
+// Define static part of template types outside component
+const staticTemplateTypes = [
+  { value: "email", icon: Mail, labelKey: "newTemplatePage.form.templateTypes.email" },
+  { value: "linkedin", icon: Linkedin, labelKey: "newTemplatePage.form.templateTypes.linkedin" },
+  { value: "phone", icon: Phone, labelKey: "newTemplatePage.form.templateTypes.phone" }
+];
+
 export default function NewTemplatePage() {
-  const [templateTypes, setTemplateTypes] = useState([
-    { value: "email", label: "Email", icon: Mail },
-    { value: "linkedin", label: "LinkedIn", icon: Linkedin },
-    { value: "phone", label: "Phone", icon: Phone },
-  ])
+  const { t } = useTranslation(['commsPage', 'common']);
+  const [templateTypes, setTemplateTypes] = useState<any[]>([]);
+
+  useEffect(() => {
+    setTemplateTypes(
+      staticTemplateTypes.map(type => ({
+        ...type,
+        label: t(type.labelKey)
+      }))
+    );
+  }, [t]);
 
   const [newType, setNewType] = useState({
     value: "",
@@ -46,41 +60,42 @@ export default function NewTemplatePage() {
   return (
     <div className="container mx-auto py-6 space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">New Template</h1>
-        <p className="text-muted-foreground">Create a new communication template</p>
+        <h1 className="text-3xl font-bold tracking-tight">{t('newTemplatePage.header.title')}</h1>
+        <p className="text-muted-foreground">{t('newTemplatePage.header.description')}</p>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle>Template Details</CardTitle>
+          <CardTitle>{t('newTemplatePage.detailsCard.title')}</CardTitle>
         </CardHeader>
         <CardContent>
           <form className="space-y-6">
             <div className="space-y-4">
               <div>
-                <Label htmlFor="name">Template Name</Label>
-                <Input id="name" placeholder="Enter template name" />
+                <Label htmlFor="name">{t('newTemplatePage.form.nameLabel')}</Label>
+                <Input id="name" placeholder={t('newTemplatePage.form.namePlaceholder')} />
               </div>
 
               <div>
-                <Label htmlFor="type">Template Type</Label>
+                <Label htmlFor="type">{t('newTemplatePage.form.typeLabel')}</Label>
                 <div className="flex gap-2">
                   <Select>
                     <SelectTrigger className="flex-1">
-                      <SelectValue placeholder="Select template type" />
+                      <SelectValue placeholder={t('newTemplatePage.form.typePlaceholder')} />
                     </SelectTrigger>
                     <SelectContent>
                       {templateTypes.map((type) => (
                         <SelectItem key={type.value} value={type.value}>
                           <div className="flex items-center gap-2">
-                            {type.icon === "Mail" ? (
+                            {/* Icon rendering logic remains */}
+                            {type.icon === Mail ? (
                               <Mail className="h-4 w-4" />
-                            ) : type.icon === "Linkedin" ? (
+                            ) : type.icon === Linkedin ? (
                               <Linkedin className="h-4 w-4" />
                             ) : (
                               <Phone className="h-4 w-4" />
                             )}
-                            <span>{type.label}</span>
+                            <span>{type.label}</span> {/* Label is now translated */}
                           </div>
                         </SelectItem>
                       ))}
@@ -94,14 +109,14 @@ export default function NewTemplatePage() {
                     </DialogTrigger>
                     <DialogContent>
                       <DialogHeader>
-                        <DialogTitle>Add New Template Type</DialogTitle>
+                        <DialogTitle>{t('newTemplatePage.addTypeDialog.title')}</DialogTitle>
                       </DialogHeader>
                       <div className="space-y-4 py-4">
                         <div>
-                          <Label htmlFor="typeValue">Type Value</Label>
+                          <Label htmlFor="typeValue">{t('newTemplatePage.addTypeDialog.valueLabel')}</Label>
                           <Input
                             id="typeValue"
-                            placeholder="e.g., sms"
+                            placeholder={t('newTemplatePage.addTypeDialog.valuePlaceholder')}
                             value={newType.value}
                             onChange={(e) =>
                               setNewType({ ...newType, value: e.target.value })
@@ -109,10 +124,10 @@ export default function NewTemplatePage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="typeLabel">Type Label</Label>
+                          <Label htmlFor="typeLabel">{t('newTemplatePage.addTypeDialog.labelLabel')}</Label>
                           <Input
                             id="typeLabel"
-                            placeholder="e.g., SMS"
+                            placeholder={t('newTemplatePage.addTypeDialog.labelPlaceholder')}
                             value={newType.label}
                             onChange={(e) =>
                               setNewType({ ...newType, label: e.target.value })
@@ -120,7 +135,7 @@ export default function NewTemplatePage() {
                           />
                         </div>
                         <div>
-                          <Label htmlFor="typeIcon">Icon</Label>
+                          <Label htmlFor="typeIcon">{t('newTemplatePage.addTypeDialog.iconLabel')}</Label>
                           <Select
                             value={newType.icon}
                             onValueChange={(value) =>
@@ -128,17 +143,17 @@ export default function NewTemplatePage() {
                             }
                           >
                             <SelectTrigger>
-                              <SelectValue placeholder="Select an icon" />
+                              <SelectValue placeholder={t('newTemplatePage.addTypeDialog.iconPlaceholder')} />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="Mail">Mail</SelectItem>
-                              <SelectItem value="Linkedin">LinkedIn</SelectItem>
-                              <SelectItem value="Phone">Phone</SelectItem>
+                              <SelectItem value="Mail">{t('newTemplatePage.addTypeDialog.iconOptions.mail')}</SelectItem>
+                              <SelectItem value="Linkedin">{t('newTemplatePage.addTypeDialog.iconOptions.linkedin')}</SelectItem>
+                              <SelectItem value="Phone">{t('newTemplatePage.addTypeDialog.iconOptions.phone')}</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
                         <Button onClick={handleAddType} className="w-full">
-                          Add Type
+                          {t('newTemplatePage.addTypeDialog.addButton')}
                         </Button>
                       </div>
                     </DialogContent>
@@ -147,19 +162,19 @@ export default function NewTemplatePage() {
               </div>
 
               <div>
-                <Label htmlFor="description">Description</Label>
+                <Label htmlFor="description">{t('newTemplatePage.form.descriptionLabel')}</Label>
                 <Textarea
                   id="description"
-                  placeholder="Enter template description"
+                  placeholder={t('newTemplatePage.form.descriptionPlaceholder')}
                   rows={3}
                 />
               </div>
 
               <div>
-                <Label htmlFor="content">Template Content</Label>
+                <Label htmlFor="content">{t('newTemplatePage.form.contentLabel')}</Label>
                 <Textarea
                   id="content"
-                  placeholder="Enter template content"
+                  placeholder={t('newTemplatePage.form.contentPlaceholder')}
                   rows={10}
                   className="font-mono"
                 />
@@ -168,9 +183,9 @@ export default function NewTemplatePage() {
 
             <div className="flex justify-end gap-4">
               <Button variant="outline" type="button">
-                Cancel
+                {t('actions.cancel', { ns: 'common' })} {/* Assuming cancel is in common.json under 'actions' */}
               </Button>
-              <Button type="submit">Create Template</Button>
+              <Button type="submit">{t('newTemplatePage.buttons.createTemplate')}</Button>
             </div>
           </form>
         </CardContent>

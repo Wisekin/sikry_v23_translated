@@ -1,33 +1,39 @@
 {
-  "title": "Tableau de bord",
-  "subtitle": "Content de vous revoir ! Voici un aperçu de votre statut actuel.",
-  "addNewCompany": "Ajouter une nouvelle entreprise",
+  "title": "Tableau de Bord",
+  "subtitle": "Content de vous revoir ! Voici un aperçu de vos activités.",
+  "header": {
+    "addNewCompanyButton": "Ajouter une Nouvelle Entreprise"
+  },
   "stats": {
-    "totalCompanies": "Total des entreprises",
-    "companiesTracked": "Entreprises actuellement suivies",
-    "totalCommunications": "Total des communications",
-    "communicationsSent": "Messages envoyés sur tous les canaux",
-    "activeScrapers": "Scrapers actifs",
-    "scrapersRunning": "Scrapers collectant actuellement des données"
+    "totalCompanies": "Nombre total d'entreprises",
+    "companiesTracked": "Nombre d'entreprises suivies.",
+    "totalCommunications": "Total des Communications",
+    "communicationsSent": "Nombre de communications envoyées.",
+    "activeScrapers": "Scrapers Actifs",
+    "scrapersRunning": "Nombre de scrapers en cours d'exécution."
   },
   "quickActions": {
-    "title": "Actions rapides",
-    "description": "Commencez avec les tâches courantes.",
-    "viewCompanies": "Voir les entreprises",
-    "viewCommunications": "Voir les communications",
-    "manageScrapers": "Gérer les scrapers",
-    "viewAnalytics": "Voir les analyses"
+    "title": "Actions Rapides",
+    "description": "Effectuez rapidement les tâches courantes.",
+    "buttons": {
+        "addNewCompany": "Ajouter une Nouvelle Entreprise",
+        "newMessage": "Nouveau Message",
+        "newScraper": "Nouveau Scraper",
+        "newCampaign": "Nouvelle Campagne"
+    },
+    "viewCompanies": "Voir les Entreprises",
+    "viewCommunications": "Voir les Communications",
+    "manageScrapers": "Gérer les Scrapers",
+    "viewAnalytics": "Voir les Analyses"
   },
   "recentActivity": {
-    "title": "Activité récente",
-    "description": "Un journal des événements récents dans votre espace de travail.",
+    "title": "Activité Récente",
+    "description": "Ce qui s'est passé récemment.",
     "noActivity": "Aucune activité récente à afficher."
   },
   "cta": {
-    "title": "Explorer l'intelligence de marché",
-    "description": "Obtenez des informations plus approfondies sur les tendances du marché et les stratégies des concurrents.",
-    "button": "Explorer Market Intel"
-  },
-  "newScraper": "newScraper"
-}
+    "title": "Explorer l'Intelligence Marché",
+    "description": "Découvrez de nouvelles perspectives et opportunités.",
+    "button": "Aller à l'Intelligence Marché"
+  }
 }

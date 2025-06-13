@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import Link from "next/link"
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { PlusCircle, Mail, Linkedin, Phone } from "lucide-react"
@@ -12,17 +13,19 @@ export const metadata = {
 }
 
 export default function TemplatesPage() {
+  const { t } = useTranslation('commsPage');
+
   return (
     <div className="container mx-auto py-6 space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Templates</h1>
-          <p className="text-muted-foreground">Manage your communication templates for different channels.</p>
+          <h1 className="text-3xl font-bold tracking-tight">{t('templatesList.header.title')}</h1>
+          <p className="text-muted-foreground">{t('templatesList.header.description')}</p>
         </div>
         <Button asChild>
           <Link href={ROUTES.TEMPLATES + "/new"}>
             <PlusCircle className="mr-2 h-4 w-4" />
-            New Template
+            {t('templatesList.header.newButton')}
           </Link>
         </Button>
       </div>
@@ -35,32 +38,41 @@ export default function TemplatesPage() {
 }
 
 function TemplatesList() {
-  const templates = [
+  const { t } = useTranslation('commsPage');
+
+  // Define static parts and map them to include translated fields
+  const templateDefinitions = [
     {
       id: "email-welcome",
-      name: "Welcome Email",
       type: "email",
-      description: "Welcome email for new users",
-      lastModified: "2024-03-15",
+      nameKey: "templatesList.mockTemplates.emailWelcome.name",
+      descriptionKey: "templatesList.mockTemplates.emailWelcome.description",
+      lastModified: "2024-03-15", // This would typically come from data, not hardcoded
       icon: Mail,
     },
     {
       id: "linkedin-connection",
-      name: "LinkedIn Connection Request",
       type: "linkedin",
-      description: "Template for LinkedIn connection requests",
+      nameKey: "templatesList.mockTemplates.linkedinConnection.name",
+      descriptionKey: "templatesList.mockTemplates.linkedinConnection.description",
       lastModified: "2024-03-14",
       icon: Linkedin,
     },
     {
       id: "phone-call-script",
-      name: "Sales Call Script",
       type: "phone",
-      description: "Script for initial sales calls",
+      nameKey: "templatesList.mockTemplates.salesCallScript.name",
+      descriptionKey: "templatesList.mockTemplates.salesCallScript.description",
       lastModified: "2024-03-13",
       icon: Phone,
     },
-  ]
+  ];
+
+  const templates = templateDefinitions.map(def => ({
+    ...def,
+    name: t(def.nameKey),
+    description: t(def.descriptionKey),
+  }));
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -76,8 +88,8 @@ function TemplatesList() {
             <CardContent>
               <p className="text-sm text-muted-foreground mb-2">{template.description}</p>
               <div className="flex items-center justify-between text-sm text-muted-foreground">
-                <span className="capitalize">{template.type}</span>
-                <span>Modified {template.lastModified}</span>
+                <span className="capitalize">{t(`templatesList.types.${template.type}`)}</span>
+                <span>{t("templatesList.card.modifiedLabel", { date: template.lastModified })}</span>
               </div>
             </CardContent>
           </Card>
